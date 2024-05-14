@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { navRoutes } from "./_constants/navRoutes";
+import { NavList } from "./_components/NavList";
+import Link from "next/link";
+import DashboardNav from "./_components/DashboardNav";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,7 +20,24 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="grid fixed w-full grid-cols-1 lg:grid-cols-[max-content_1fr]">
+          <aside className="hidden lg:block max-w-[270px] w-[20vw] min-w-[250px] h-screen border bg-zinc-100 border-r-zinc-100">
+            <Link href="/" className="px-5 py-5 flex flex-row items-center gap-x-2">
+              <h1 className="text-slate-800 text-2xl font-bold tracking-wider">RexPay</h1>
+              {/* <Image width={190} height={70} alt="Logo" src="/images/logo-and-text.svg" /> */}
+            </Link>
+
+            <NavList route={navRoutes} />
+          </aside>
+
+          <main className="w-full relative overflow-scroll bg-white h-screen max-h-[100vh] min-h-max grid grid-rows-[max-content_1fr]">
+            <DashboardNav />
+            {children}
+          </main>
+        </div>
+      {/* {children} */}
+      </body>
     </html>
   );
 }
