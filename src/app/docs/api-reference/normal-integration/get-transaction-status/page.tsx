@@ -35,7 +35,7 @@ condimentum lobortis et. Pellentesque dictum lorem vitae et
 
       <WarningBox>
         <h3 className="text-slate-800 font-semibold">Limited support</h3>
-        <p className="mt-3 text-slate-800">Not all endpoints are supported by our SDKs yet. You'll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that's missing in your preferred SDK, please send in a PR.</p>
+        <p className="mt-3 text-slate-800">Not all endpoints are supported by our SDKs yet. You&apos;ll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that&apos;s missing in your preferred SDK, please send in a PR.</p>
       </WarningBox>
 
       <ParagraphHeading id="change-returning-users">Change returning users</ParagraphHeading>

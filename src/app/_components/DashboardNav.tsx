@@ -54,15 +54,15 @@ const DashboardNav = memo(() => {
 
       <ul className="flex flex-row gap-2 items-center">
         <li className="max-h-max grid">
-          <button className="text-black font-semibold hover:bg-zinc-100 px-5 py-2 duration-300 rounded-md">
+          <Link href="/sign-in" className="text-black font-semibold hover:bg-zinc-100 px-5 py-2 duration-300 rounded-md">
             Log in
-          </button>
+          </Link>
         </li>
 
         <li className="bg-zinc-100 shadow-sm p-1 rounded-full flex flex-row items-center gap-2">
-          <button className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2 duration-300 rounded-md">
+          <Link href="/sign-up" className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2 duration-300 rounded-md">
             Sign up
-          </button>
+          </Link>
         </li>
       </ul>
       <MobileNavMenuModal isOpen={isNavOpen} setIsOpen={setIsNavOpen} />

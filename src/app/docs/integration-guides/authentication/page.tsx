@@ -34,7 +34,7 @@ export default function Authentication() {
 
       <ParagraphHeading id="api-keys">API Keys</ParagraphHeading>
 
-      <Paragraph>When you create a Rex Pay account, you're given three kinds of API keys:</Paragraph>
+      <Paragraph>When you create a Rex Pay account, you&apos;re given three kinds of API keys:</Paragraph>
 
       <ListGroup className="gap-5 mb-5">
         {
@@ -82,7 +82,7 @@ export default function Authentication() {
 
       <InfoBox className="!my-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisiconntum lobortis et. Pellentesque dictum lorem vitae et  Pellen fhgjhkjzsd Lorem ipsum dolor sit amet, consectetur adipiscing</InfoBox>
 
-      <Paragraph>To authorize API calls from your server, pass your secret key as a bearer token. This means passing an Authorization header with a value of "Bearer: YOUR_SECRET_KEY".</Paragraph>
+      <Paragraph>To authorize API calls from your server, pass your secret key as a bearer token. This means passing an Authorization header with a value of &quot;Bearer: YOUR_SECRET_KEY&quot;.</Paragraph>
 
       <Paragraph>For example, an API call could look like this in Node.js:</Paragraph>
       
@@ -99,12 +99,12 @@ export default function Authentication() {
         }
       </CodeBlock>
 
-      <Paragraph>If you're using one of our <Link className="underline" href="/docs/sdk-and-plugins/backend-libraries">backend SDKs</Link>, you don't need to pass the header manually; instead you'll provide your keys when initialising the library.</Paragraph>
+      <Paragraph>If you&apos;re using one of our <Link className="underline" href="/docs/sdk-and-plugins/backend-libraries">backend SDKs</Link>, you don&apos;t need to pass the header manually; instead you&apos;ll provide your keys when initialising the library.</Paragraph>
 
       <CodeBlock>{
       `// Install with: npm i RexPay-node-v3
         
-const Flutterwave = require('RexPay-node-v3');
+const Flutterwave = require(&apos;RexPay-node-v3&apos;);
 const flw = new RexPay (process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
 // Subsequqent calls will automatically have the header added
 flw.Misc.bvn({bvn: "123456789010"})

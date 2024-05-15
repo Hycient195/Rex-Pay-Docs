@@ -1,18 +1,31 @@
+"use client"
+
+import { useState } from "react"
+
 interface IProps {
   children: React.ReactNode | string,
-  language?: string
+  language?: Array<string>
   className?: string,
   copy?: boolean
 }
 
 export default function CodeBlock({ children, language, className, copy }: IProps) {
+  const [ selectedLangauge, setSelectedLangauge ] = useState<string|any>(language && language[0] as string);
   return (
     <div className={`p-3 lg:p-4 xl:p-6 xl:py-8 my-3 overflow-x-auto bg-slate-600 text-slate-100 rounded-xl ${className}`}>
       {
         (copy || language)
         && (
           <div className="relative flex flex-row-items-center-gap-4 justify-between">
-            {language && <h3 className="mb-5 border-b-2 border-b-red-400/90 max-w-max px-1 font-semibold pb-1">{language }</h3>}
+            {language &&
+              <div className="flex flex-row items-center gap-2">
+                {
+                  language.map(each => (
+                    <button key={each} onClick={() => setSelectedLangauge(each)} className={`mb-5 border-b-2 max-w-max px-1 font-semibold pb-1 ${each == selectedLangauge ? "border-b-red-400/90" : "border-b-transparent"}`}>{each}</button>
+                  ))
+                }
+              </div>
+            }
             {copy &&
               <button className="absolute -top-2 right-0 text-slate-100 h-max">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">

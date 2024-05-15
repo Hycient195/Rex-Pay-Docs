@@ -10,7 +10,7 @@ export default function CheckoutPage() {
   return (
     <main className="">
       <PageHeading>Checkout page</PageHeading>
-      <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you're willing to accept from your customers.</Paragraph>
+      <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you&apos;re willing to accept from your customers.</Paragraph>
       <Paragraph>There are two ways to specify your accepted payment methods.</Paragraph>
 
       <ParagraphHeading id="assemble-payment-details">Step 1. Assemble payment details</ParagraphHeading>
@@ -63,7 +63,7 @@ export default function CheckoutPage() {
           "We'll redirect to your redirect_url with status, tx_ref, and transaction_id query parameters after payment is complete.",
           "We'll send you a webhook if you have that enabled. Learn more about webhooks and see examples here.",
           "We'll send an email receipt to your customer if the payment was successful (unless you've disabled that).",
-          "We'll send you an email notification (unless you've disabled that).",
+          "We'll send you an email notification (unless you&apos;ve disabled that).",
         ].map((each, index: number) => (
           <ListItem index={index} key={`payment-item-${index}`}>{each}</ListItem>
         ))
@@ -71,7 +71,7 @@ export default function CheckoutPage() {
     </ListGroup>
 
     <Paragraph>On your server, you should handle the redirect and always verify the final state of the transaction.</Paragraph>
-    <Paragraph>Here's what transaction verification could look like in a Node.js app with our backend SDK:</Paragraph>
+    <Paragraph>Here&apos;s what transaction verification could look like in a Node.js app with our backend SDK:</Paragraph>
 
     <CodeBlock copy>{
       `const response = await got.post("https://api.flutterwave.com/v3/payments", {
@@ -84,8 +84,8 @@ export default function CheckoutPage() {
 });`}</CodeBlock>
 
     <ParagraphHeading id="if-payment-fails">What if the payment fails?</ParagraphHeading>
-    <Paragraph>If the payment attempt fails (for instance, due to insufficient funds), you don't need to do anything. We'll keep the payment page open, so the customer can try again until the payment succeeds or they choose to cancel, after which we'll redirect to the redirect_url with the query parameters tx_ref and a status of failed.</Paragraph>
-    <Paragraph>If you have webhooks enabled, we'll send you a notification for each failed payment attempt. This is useful in case you want to later reach out to customers who had issues paying. See our <Link href="" className="text-red-700/60">webhooks guide</Link> for an example.</Paragraph>
+    <Paragraph>If the payment attempt fails (for instance, due to insufficient funds), you don&apos;t need to do anything. We&apos;ll keep the payment page open, so the customer can try again until the payment succeeds or they choose to cancel, after which we&apos;ll redirect to the redirect_url with the query parameters tx_ref and a status of failed.</Paragraph>
+    <Paragraph>If you have webhooks enabled, we&apos;ll send you a notification for each failed payment attempt. This is useful in case you want to later reach out to customers who had issues paying. See our <Link href="" className="text-red-700/60">webhooks guide</Link> for an example.</Paragraph>
     </main>
   )
 }

@@ -6,7 +6,7 @@ export default function PaymentMethods() {
   return (
     <main className="">
       <PageHeading id="payment-methods">Payment methods</PageHeading>
-      <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you're willing to accept from your customers.</Paragraph>
+      <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you&apos;re willing to accept from your customers.</Paragraph>
 
       <Paragraph>There are two ways to specify your accepted payment methods.</Paragraph>
 
