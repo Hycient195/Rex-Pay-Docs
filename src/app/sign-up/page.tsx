@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function SignUp() {
   return (
     <main className="relative p-4 lg:p-5 bg-gray-100/50">
-            <Link href="/sign-in" className="btn-black absolute top-3 !font-medium right-4">Already have an account? Log in</Link>
+      <Link href="/sign-in" className="btn-black absolute top-3 !font-medium right-4">Already have an account? Log in</Link>
 
       <div className="max-w-screen-sm w-full mx-auto p-5 shadow-md py-8 md:p-6 lg:p-8 bg-white rounded-xl">
         <h1 className="text-center text-2xl font-semibold text-slate-800">Create an account</h1>
