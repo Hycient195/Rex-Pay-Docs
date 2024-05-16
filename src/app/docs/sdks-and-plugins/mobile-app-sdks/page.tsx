@@ -8,7 +8,7 @@ export default function MobileSDKs() {
     <main className="">
       <PageHeading>SDKs for mobile apps</PageHeading>
 
-      <div className="grid grid-cols-2 max-md:grid-cols-1 mt-8 gap-4  gap-y-10 max-w-screen-md">
+      <div className="grid grid-cols-2 mt-8 gap-4  gap-y-10 max-w-screen-md">
         {
           [{ image: sharedImages.android, text: "Android" }, { image: sharedImages.ios, text: "IOS" }, { image: sharedImages.flutter, text: "Flutter" }].map(each => (
             <div key={each.text} className="grid grid-cols-[70px_1fr] items-center gap-3 lg:gap-4">

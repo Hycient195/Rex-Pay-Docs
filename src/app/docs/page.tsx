@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main className="">
       <h1 className="text-3xl font-bold text-slate-700">RexPay Documentation</h1>
-      <div className="grid grid-cols-2 max-md:grid-cols-1 mt-5 gap-4  gap-y-10 max-w-screen-md">
+      <div className="grid grid-cols-2 max-md:grid-cols-1 mt-7 gap-4  gap-y-10 max-w-screen-md">
         {
           homeConstants.map(each => (
             <div key={each.title} className="">

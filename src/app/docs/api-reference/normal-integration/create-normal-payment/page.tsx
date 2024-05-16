@@ -61,7 +61,7 @@ export default function CreatePayment() {
               <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
                 {
                   row.map((col, colIndex: number) => (
-                    <td key={`payment-column-${colIndex}`} className=""><span className=" ">{col}</span></td>
+                    <td key={`payment-column-${colIndex}`} className="break-all">{col}</td>
                   ))
                 }
               </tr>
@@ -78,7 +78,7 @@ export default function CreatePayment() {
               <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
                 {
                   row.map((col, colIndex: number) => (
-                    <td key={`payment-column-${colIndex}`} className=""><span className=" ">{col}</span></td>
+                    <td key={`payment-column-${colIndex}`} className="">{col}</td>
                   ))
                 }
               </tr>

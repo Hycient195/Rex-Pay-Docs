@@ -4,7 +4,7 @@ import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Text
 
 export default function GetTransactionStatus() {
   return (
-    <main className="">
+    <main className="grid">
       <PageHeading>Get transaction status</PageHeading>
       <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
 
@@ -18,7 +18,7 @@ export default function GetTransactionStatus() {
 
       <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing </Paragraph>
 
-      <div className="p-3 border border-slate-300 rounded-xl">
+      <div className="p-3 border grid border-slate-300 rounded-xl">
         <div className="flex justify-between gap-4">
           <div className="bg-slate-200 rounded-lg px-3 py-1 5">cURL</div>
           <div className="">Show response</div>
@@ -28,8 +28,7 @@ export default function GetTransactionStatus() {
 condimentum lobortis et. Pellentesque dictum lorem vitae et
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-          `}
+condimentum lobortis et. Pellentesque dictum lorem vitae et`}
         </CodeBlock>
       </div>
 

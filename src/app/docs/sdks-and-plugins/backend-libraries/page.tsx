@@ -14,7 +14,7 @@ export default function BackendFrameworks() {
         <p className="mt-3">Not all endpoints are supported by our SDKs yet. You&apos;ll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that&apos;s missing in your preferred SDK, please send in a PR.</p>
       </WarningBox>
 
-      <div className="grid grid-cols-2 max-md:grid-cols-1 mt-8 gap-4  gap-y-10 max-w-screen-md">
+      <div className="grid grid-cols-2 mt-8 gap-4  gap-y-10 max-w-screen-md">
         {
           [{ image: sharedImages.java, text: "Java" }, { image: sharedImages.cSharp, text: "C#" }, { image: sharedImages.python, text: "C#" }, { image: sharedImages.php, text: "C#" },].map(each => (
             <div key={each.text} className="grid grid-cols-[70px_1fr] items-center gap-3 lg:gap-4">

@@ -8,7 +8,7 @@ export default function FrontendFrameworks() {
       <PageHeading>Frontend Frameworks</PageHeading>
       <Paragraph>These libraries should be used on the frontend.</Paragraph>
 
-      <div className="grid grid-cols-2 max-md:grid-cols-1 mt-5 gap-4  gap-y-10 max-w-screen-md">
+      <div className="grid grid-cols-2 mt-5 gap-4  gap-y-10 max-w-screen-md">
         {
           [{ image: sharedImages.react, text: "React" }, { image: sharedImages.angular, text: "Angular" },].map(each => (
             <div key={each.text} className="grid grid-cols-[70px_1fr] items-center gap-3 lg:gap-4">

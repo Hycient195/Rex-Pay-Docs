@@ -13,7 +13,7 @@ const MobileNavMenuModal: React.FC<IProps> = memo(({ isOpen, setIsOpen }) => {
 
   if (isOpen) {
     return (
-        <aside className="bg-white z-[1] fixed md:hidden bottom-0 left-0 w-full h-full border border-r-slate-200">
+        <aside className="bg-white z-[1] fixed lg:hidden bottom-0 left-0 w-full h-full border border-r-slate-200">
           <div className="shadow flex flex-row items-center justify-between py-2 px-4">
             <Link href="/" className="relative py-3 flex flex-row  max-w-max items-center gap-x-2">
               {/* <Image
