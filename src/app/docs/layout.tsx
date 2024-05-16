@@ -32,8 +32,8 @@ export default function Layout({ children }: IProps) {
             <DashboardNav />
             
             <div className="h-full  relative grid grid-rows-[1fr_max-content]">
-              <div className="w-full relative h-full grid gap-3 xl:gap-4 grid-cols-[2.5fr_1fr] p-4 lg:p-6">
-                <div className=" min-w-[500px]">
+              <div className="w-full relative h-full grid gap-3 xl:gap-4 grid-cols-[2.5fr_1fr] max-md:grid-cols-1 p-4 lg:p-6">
+                <div className="!gri min-w-[300px]">
                   {children}
                 </div>
                 {

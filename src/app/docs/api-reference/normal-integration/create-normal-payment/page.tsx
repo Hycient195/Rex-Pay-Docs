@@ -4,7 +4,7 @@ import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Text
 
 export default function CreatePayment() {
   return (
-    <main className="">
+    <main className="grid">
       <PageHeading>Create payment</PageHeading>
       <InfoBox>
         <h3 className="text-lg font-semibold text-slate-800">Lorem ipsum dolor sit amet</h3>
@@ -43,14 +43,14 @@ export default function CreatePayment() {
               <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
                 {
                   row.map((col, colIndex: number) => (
-                    <td key={`payment-column-${colIndex}`} className=""><span className=" ">{col}</span></td>
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
                   ))
                 }
               </tr>
             ))
           }
           <tr className="border border-slate-300/60">
-            <td className="font-semibold">For single <span className="text-green-600">split payments</span></td>
+            <td colSpan={3} className="font-semibold ">For single <span className="text-green-600">split payments</span></td>
           </tr>
           {
             [
@@ -68,7 +68,7 @@ export default function CreatePayment() {
             ))
           }
           <tr className="border border-slate-300/60">
-            <td className="font-semibold">For <span className="text-green-600"> multi_split plit payments</span></td>
+            <td colSpan={3} className="font-semibold">For <span className="text-green-600"> multi_split plit payments</span></td>
           </tr>
           {
             [

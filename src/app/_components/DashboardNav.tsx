@@ -50,15 +50,15 @@ const DashboardNav = memo(() => {
 
       <ul className="flex flex-row gap-2 items-center">
         <li className="max-h-max grid">
-          <Link href="/sign-in" className="text-black font-semibold hover:bg-zinc-100 px-5 py-2 duration-300 rounded-md">
+          <a href="https://www.myrexpay.ng/login" className="text-black font-semibold hover:bg-zinc-100 px-5 py-2 duration-300 rounded-md">
             Log in
-          </Link>
+          </a>
         </li>
 
         <li className="bg-zinc-100 shadow-sm p-1 rounded-full flex flex-row items-center gap-2">
-          <Link href="/sign-up" className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2 duration-300 rounded-md">
+          <a href="https://www.myrexpay.ng/signup" className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2 duration-300 rounded-md">
             Sign up
-          </Link>
+          </a>
         </li>
       </ul>
       <MobileNavMenuModal isOpen={isNavOpen} setIsOpen={setIsNavOpen} />
