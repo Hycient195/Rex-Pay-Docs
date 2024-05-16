@@ -39,7 +39,7 @@ export default function Layout({ children }: IProps) {
                 {
                   pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation]
                   && (
-                    <div className="  min-w-[300px sticky h-max top-[90px]">
+                    <div className="  min-w-[300px sticky h-max top-[90px] max-md:hidden">
                       <h3 className="text-xl text-slate-800 font-bold">On this page</h3>
                       <ul className="mt-5 flex flex-col gap-2">
                         {
@@ -55,7 +55,7 @@ export default function Layout({ children }: IProps) {
               
               </div>
               
-              <footer className=" px-4 lg:px-6 sticky bottom-0 bg-white ">
+              <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
                 <div className="border-t border-t-zinc-200 py-5 text-slate-800">
                   <div className="max-w-screen-md grid grid-cols-[1fr_1px_1fr] gap-4 justify-between">
                     <div className="">

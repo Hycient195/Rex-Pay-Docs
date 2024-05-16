@@ -36,27 +36,29 @@ const DashboardNav = memo(() => {
 
   return (
     <nav className="w-full z-[3] sticky top-0 bg-white flex justify-between py-2 md:py-3 px-3 md:px-4 xl:px-6 shadow items-center">
-      <div className="items-center gap-x-1.5 flex flex-row gap-2 border lg:w-[60%] border-zinc-2/7000 rounded-full p-2.5 px-3 text-zinc-500">
+      <button onClick={() => setIsNavOpen(true)} className="block md:hidden text-primary border border-primary/60 px-2 py-0.5 rounded">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+      </button>
+
+      <div className="items-center max-md:hidden gap-x-1.5 flex flex-row gap-2 border lg:w-[60%] border-zinc-2/7000 rounded-full p-2.5 px-3 text-zinc-500">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>
         <input type="text" className="focus:outline-none text-left" placeholder="Search Documentation" />
       </div>
-      {/* <button onClick={() => setIsNavOpen(true)} className="block md:hidden text-primary border border-primary/60 px-2 py-0.5 rounded">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8">
-          <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-        </svg>
-      </button> */}
+
 
       <ul className="flex flex-row gap-2 items-center">
         <li className="max-h-max grid">
-          <a href="https://www.myrexpay.ng/login" className="text-black font-semibold hover:bg-zinc-100 px-5 py-2 duration-300 rounded-md">
+          <a href="https://www.myrexpay.ng/login" className="text-black font-semibold hover:bg-zinc-100 px-5 py-2.5 duration-300 rounded-md">
             Log in
           </a>
         </li>
 
         <li className="bg-zinc-100 shadow-sm p-1 rounded-full flex flex-row items-center gap-2">
-          <a href="https://www.myrexpay.ng/signup" className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2 duration-300 rounded-md">
+          <a href="https://www.myrexpay.ng/signup" className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2.5 duration-300 rounded-md">
             Sign up
           </a>
         </li>

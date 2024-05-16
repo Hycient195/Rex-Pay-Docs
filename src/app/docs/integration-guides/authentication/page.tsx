@@ -99,7 +99,7 @@ export default function Authentication() {
         }
       </CodeBlock>
 
-      <Paragraph>If you&apos;re using one of our <Link className="underline" href="/docs/sdk-and-plugins/backend-libraries">backend SDKs</Link>, you don&apos;t need to pass the header manually; instead you&apos;ll provide your keys when initialising the library.</Paragraph>
+      <Paragraph>If you&apos;re using one of our <Link className="underline" href="/docs/sdks-and-plugins/backend-libraries">backend SDKs</Link>, you don&apos;t need to pass the header manually; instead you&apos;ll provide your keys when initialising the library.</Paragraph>
 
       <CodeBlock>{
       `// Install with: npm i RexPay-node-v3
