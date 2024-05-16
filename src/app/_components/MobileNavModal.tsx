@@ -24,7 +24,7 @@ const MobileNavMenuModal: React.FC<IProps> = memo(({ isOpen, setIsOpen }) => {
                 className=""
                 alt="Study Abroad"
               /> */}
-              <h1 className="text-2xl font-semibold -mb-2 text-slate-800 tracking-wider">RexPay</h1>
+              <h1 className="text-2xl font-bold -mb-2 text-slate-800 tracking-wider">RexPay</h1>
             </Link>
             <button onClick={() => setIsOpen(false)} className=" right-3 top-2">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
