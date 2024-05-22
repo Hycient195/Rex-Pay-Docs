@@ -6,6 +6,7 @@ import Link from "next/link";
 import { NavList } from "../_components/NavList";
 import DashboardNav from "../_components/DashboardNav";
 import { navRoutes } from "../_constants/navRoutes";
+import Image from "next/image";
 
 interface IProps {
   children: React.ReactNode
@@ -21,8 +22,7 @@ export default function Layout({ children }: IProps) {
     <div className="grid fixed w-full grid-cols-1 lg:grid-cols-[max-content_1fr]">
           <aside className="hidden lg:block max-w-[270px] w-[20vw] min-w-[250px] h-screen border bg-zinc-100 border-r-zinc-100">
             <Link href="/" className="px-5 py-5 flex flex-row items-center gap-x-2">
-              <h1 className="text-slate-800 text-2xl font-bold tracking-wider">RexPay</h1>
-              {/* <Image width={190} height={70} alt="Logo" src="/images/logo-and-text.svg" /> */}
+              <Image width={140} height={70} alt="Logo" src="/rexpay-logo.png" />
             </Link>
 
             <NavList route={navRoutes} />
@@ -52,7 +52,6 @@ export default function Layout({ children }: IProps) {
                     </div>
                   )
                 }
-              
               </div>
               
               <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
@@ -66,7 +65,7 @@ export default function Layout({ children }: IProps) {
                         </svg>
                         Have any questions?
                       </h4>
-                      <p className="">Lorem ipsum dolor sit amet, constet jdkdkd adipiscing elit.</p>
+                      <p className="">Feel free to reach out if you have any questions or need assistance with integrating the RexPay API.</p>
                     </div>
                     <div className="w-px h-full px-[5%] bg-zinc-200 " />
                     <div className="">
@@ -76,7 +75,7 @@ export default function Layout({ children }: IProps) {
                         </svg>
                         Video tutorials
                       </h4>
-                      <p className="">Lorem ipsum dolor sit amet, constet jdkdkd adipiscing elit.</p>
+                      <p className="">Visit our YouTube channel for tutorials on integrating the RexPay API.</p>
                     </div>
                   </div>
                 </div>
