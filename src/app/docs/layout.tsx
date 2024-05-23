@@ -56,7 +56,8 @@ export default function Layout({ children }: IProps) {
               
               <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
                 <div className="border-t border-t-zinc-200 py-5 text-slate-800">
-                  <div className="max-w-screen-md grid grid-cols-[1fr_1px_1fr] gap-4 justify-between">
+                  {/* <div className="max-w-screen-md grid grid-cols-[1fr_1px_1fr] gap-4 justify-between"> */}
+                  <div className="max-w-screen-md grid gap-4">
                     <div className="">
                       <h4 className="font-semibold flex flex-row items-center gap-3 mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(220 38 38 / 0.6)" className="w-6 h-6">
@@ -68,7 +69,7 @@ export default function Layout({ children }: IProps) {
                       <p className="">Feel free to reach out if you have any questions or need assistance with integrating the RexPay API.</p>
                     </div>
                     <div className="w-px h-full px-[5%] bg-zinc-200 " />
-                    <div className="">
+                    {/* <div className="">
                       <h4 className="font-semibold flex flex-row items-center gap-3 mb-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="rgb(220 38 38 / 0.6)" className="w-6 h-6">
                           <path fillRule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12Zm14.024-.983a1.125 1.125 0 0 1 0 1.966l-5.603 3.113A1.125 1.125 0 0 1 9 15.113V8.887c0-.857.921-1.4 1.671-.983l5.603 3.113Z" clipRule="evenodd" />
@@ -76,7 +77,7 @@ export default function Layout({ children }: IProps) {
                         Video tutorials
                       </h4>
                       <p className="">Visit our YouTube channel for tutorials on integrating the RexPay API.</p>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </footer>

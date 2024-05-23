@@ -2,7 +2,7 @@ import home1 from "@public/images/shared/home-1.png";
 import home2 from "@public/images/shared/home-2.png";
 import home3 from "@public/images/shared/home-3.png";
 import home4 from "@public/images/shared/home-4.png";
-import auth1 from "@public/images/shared/auth-1.png";
+import auth1 from "@public/images/shared/auth-1.jpg";
 import react from "@public/images/shared/react.png";
 import angular from "@public/images/shared/angular.png";
 import java from "@public/images/shared/java.png";

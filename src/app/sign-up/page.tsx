@@ -56,7 +56,7 @@ export default function SignUp() {
 
           <label htmlFor="ack" className="flex flex-row gap-2 items-start">
             <input type="checkbox" className="h-[20px] w-[20px] mt-1" name="" id="ack" />
-            <p className="">I acknowledge that I have read and do hereby accept the terms and conditions in the Rex Pay Terms of Use, Merchant Agreement and Privacy Policy.</p>
+            <p className="">I acknowledge that I have read and do hereby accept the terms and conditions in the RexPay Terms of Use, Merchant Agreement and Privacy Policy.</p>
           </label>
           
           <button className="btn-black !py-3 !rounded-lg mt-5">Create your account</button>

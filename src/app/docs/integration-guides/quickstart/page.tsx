@@ -26,7 +26,15 @@ export default function QuickStart() {
       <ParagraphHeading>Step 1. Create an account</ParagraphHeading>
       <Paragraph>Begin your journey by creating a <a href="https://www.myrexpay.ng/signup" style={{color: '#FF4512'}}>RexPay account</a>. Upon signing up, you will automatically have access to the test environment.</Paragraph>
       <figure className="relative w-full max-w-screen-md h-auto aspect-video bg-black/30">
-
+        <iframe
+          style={{
+            width: '100%',
+            height: '100%'
+          }}
+          src="https://www.youtube.com/embed/JY4z0GMM_5M?si=R93B3N_qZIaG2NZZ"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        ></iframe>
       </figure>
       <Paragraph>In the test environment, you would be able to:</Paragraph>
       {/* 
