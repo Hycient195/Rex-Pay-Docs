@@ -20,31 +20,14 @@ export default function Layout({ children }: IProps) {
 
   return (
     <div className="grid fixed w-full grid-cols-1 lg:grid-cols-[max-content_1fr]">
-<<<<<<< HEAD
       <aside className="hidden lg:block max-w-[270px] w-[20vw] min-w-[250px] h-screen border bg-zinc-100 border-r-zinc-100">
         <Link href="/" className="px-5 py-5 flex flex-row items-center gap-x-2">
-          <h1 className="text-slate-800 text-2xl font-bold tracking-wider">RexPay</h1>
-          {/* <Image width={190} height={70} alt="Logo" src="/images/logo-and-text.svg" /> */}
+          <Image width={140} height={70} alt="Logo" src="/rexpay-logo.png" />
         </Link>
-=======
-          <aside className="hidden lg:block max-w-[270px] w-[20vw] min-w-[250px] h-screen border bg-zinc-100 border-r-zinc-100">
-            <Link href="/" className="px-5 py-5 flex flex-row items-center gap-x-2">
-              <Image width={140} height={70} alt="Logo" src="/rexpay-logo.png" />
-            </Link>
->>>>>>> 1885c7980b71f8e38040447646e6723ee31508a5
 
         <NavList route={navRoutes} />
       </aside>
 
-<<<<<<< HEAD
-      <main className="w-full relative overflow-scroll bg-white h-screen max-h-[100vh] min-h-max grid grid-rows-[max-content_1fr]">
-        <DashboardNav />
-        
-        <div className="h-full  relative grid grid-rows-[1fr_max-content]">
-          <div className="w-full relative h-full grid gap-3 xl:gap-4 grid-cols-[2.5fr_1fr] max-md:grid-cols-1 p-4 lg:p-6">
-            <div className="!gri min-w-[300px]">
-              {children}
-=======
           <main className="w-full relative overflow-scroll bg-white h-screen max-h-[100vh] min-h-max grid grid-rows-[max-content_1fr]">
             <DashboardNav />
             
@@ -83,7 +66,7 @@ export default function Layout({ children }: IProps) {
                         </svg>
                         Have any questions?
                       </h4>
-                      <p className="">Feel free to reach out if you have any questions or need assistance with integrating the RexPay API.</p>
+                      <p className="">Feel free to reach out if you have any questions or need assistance with integrating the RexPay API.</p>
                     </div>
                     <div className="w-px h-full px-[5%] bg-zinc-200 " />
                     {/* <div className="">
@@ -98,7 +81,6 @@ export default function Layout({ children }: IProps) {
                   </div>
                 </div>
               </footer>
->>>>>>> 1885c7980b71f8e38040447646e6723ee31508a5
             </div>
             {
               pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation]
@@ -116,7 +98,7 @@ export default function Layout({ children }: IProps) {
                 </div>
               )
             }
-          </div>
+          
           
           <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
             <div className="border-t border-t-zinc-200 py-5 text-slate-800">
@@ -144,8 +126,7 @@ export default function Layout({ children }: IProps) {
               </div>
             </div>
           </footer>
-        </div>
-
+      
       </main>
     </div>    
   )

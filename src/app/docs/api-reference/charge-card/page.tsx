@@ -191,7 +191,7 @@ export default function CharegeCard() {
           <div className="px-[3%] pt-[2%] pb-[3%]">
             <Param text="sideNote" type="string" />
             <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-              <p className="text-slate-800">This could be any message you'd like to associate with this call.</p>
+              <p className="text-slate-800">This could be any message you&apos;d like to associate with this call.</p>
             </div>
           </div>
         </div>

@@ -167,7 +167,7 @@ export default function CharegeCard() {
 
       <Param text="email" type="String" />
       <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">The customer's email address.</p>
+        <p className="text-slate-800">The customer&apos;s email address.</p>
         <div className="px-2 py-1 border text-sm border-gray-300">xyz@gmail.com</div>
       </div>
       <Line />
