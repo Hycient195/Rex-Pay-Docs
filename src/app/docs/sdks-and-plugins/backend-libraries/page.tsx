@@ -3,6 +3,29 @@ import { PageHeading, Paragraph } from "@SharedComponents/Texts";
 import sharedImages from "@SharedConstants/images";
 import Image from "next/image";
 
+const frameworks = [
+  {
+    image: sharedImages.java,
+    text: "Java",
+    url: 'https://github.com/accelerex-developer/RexPayJava/tree/master'
+  }, 
+  {
+    image: sharedImages.cSharp,
+    text: "C#",
+    url: 'https://github.com/accelerex-developer/RexPayCSharp/'
+  }, 
+  {
+    image: sharedImages.python,
+    text: "Python",
+    url: '#'
+  }, 
+  {
+    image: sharedImages.php,
+    text: "PHP",
+    url: 'https://github.com/accelerex-developer/RexPayPHP'
+  }
+]
+
 export default function BackendFrameworks() {
   return (
     <main className="">
@@ -16,13 +39,15 @@ export default function BackendFrameworks() {
 
       <div className="grid grid-cols-2 mt-8 gap-4  gap-y-10 max-w-screen-md">
         {
-          [{ image: sharedImages.java, text: "Java" }, { image: sharedImages.cSharp, text: "C#" }, { image: sharedImages.python, text: "C#" }, { image: sharedImages.php, text: "C#" },].map(each => (
-            <div key={each.text} className="grid grid-cols-[70px_1fr] items-center gap-3 lg:gap-4">
-              <figure className="relative w-full rounded-lg h-auto aspect-square">
-                <Image fill src={each.image} alt={each.text} />
-              </figure>
-              <h3 className="text-red-500/80 font-bold text-lg">{each.text}</h3>
-            </div>
+          frameworks.map(each => (
+            <a key={each.text} href={each.url}>
+              <div key={each.text} className="grid grid-cols-[70px_1fr] items-center gap-3 lg:gap-4">
+                <figure className="relative w-full rounded-lg h-auto aspect-square">
+                  <Image fill src={each.image} alt={each.text} />
+                </figure>
+                <h3 className="text-red-500/80 font-bold text-lg">{each.text}</h3>
+              </div>
+            </a>
           ))
         }
       </div>
