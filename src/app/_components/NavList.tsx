@@ -18,9 +18,9 @@ export const NavList = ({ route, setIsOpen }: IProps) => {
     
     return ((pathname === "/docs" && arg === "/" ) || (arg !== "/" && pathname.includes(arg)))
   };
-  // console.log(pathname)
+
   // @ts-ignore
-  console.log(route[4]?.subroutes[0]?.subroutes[0].route)
+  // console.log(route[4]?.subroutes[0]?.subroutes[0].route)
 
   return (
     <ul className="flex flex-col gap-y-1 my-[2vh]">

@@ -58,56 +58,36 @@ export const navRoutes = [
     route: "api-reference",
     subroutes: [
       {
-        text: "Normal Integration",
-        route: "normal-integration",
-        subroutes: [
-          {
-            text: "Create Payment",
-            route: "create-normal-payment",
-          },
-          {
-            text: "Get Transaction Status",
-            route: "get-transaction-status",
-          },
-        ]
+        text: "Create Payment",
+        route: "create-payment",
       },
       {
-        text: "Direct Integration",
-        route: "direct-integration",
-        subroutes: [
-          {
-            text: "Insert Public Key",
-            route: "insert-public-key",
-          },
-          {
-            text: "Create Payment",
-            route: "create-direct-payment",
-          },
-          {
-            text: "Charge Card",
-            route: "charge-card",
-          },
-          {
-            text: "Authorize Card",
-            route: "autorize-card",
-          },
-          {
-            text: "Charge By Transfer",
-            route: "charge-by-transfer",
-          },
-          {
-            text: "Charge By USSD",
-            route: "charge-by-ussd",
-          },
-          {
-            text: "Get USSD Payment Details",
-            route: "get-ussd-payment-details",
-          },
-          {
-            text: "Get Transaction Status",
-            route: "get-transaction-status",
-          },
-        ]
+        text: "Get Transaction Status",
+        route: "get-transaction-status",
+      },
+      {
+        text: "Insert Public Key",
+        route: "insert-public-key"
+      },
+      {
+        text: "Charge Card",
+        route: "charge-card"
+      },
+      {
+        text: "Authorize Card",
+        route: "authorize-card"
+      },
+      {
+        text: "Charge By Transfer",
+        route: "charge-by-transfer"
+      },
+      {
+        text: "Charge By USSD",
+        route: "charge-by-ussd"
+      },
+      {
+        text: "Get USSD Payment Details",
+        route: "get-ussd-payment-details"
       }
     ]
   }
