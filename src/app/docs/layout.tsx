@@ -100,7 +100,7 @@ export default function Layout({ children }: IProps) {
             }
           
           
-          <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
+          {/* <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
             <div className="border-t border-t-zinc-200 py-5 text-slate-800">
               <div className="max-w-screen-md grid grid-cols-[1fr_1px_1fr] gap-4 justify-between">
                 <div className="">
@@ -125,7 +125,7 @@ export default function Layout({ children }: IProps) {
                 </div>
               </div>
             </div>
-          </footer>
+          </footer> */}
       
       </main>
     </div>    

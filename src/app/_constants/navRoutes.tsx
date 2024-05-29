@@ -65,18 +65,18 @@ export const navRoutes = [
         text: "Get Transaction Status",
         route: "get-transaction-status",
       },
-      {
-        text: "Insert Public Key",
-        route: "insert-public-key"
-      },
+      // {
+      //   text: "Insert Public Key",
+      //   route: "insert-public-key"
+      // },
       {
         text: "Charge Card",
         route: "charge-card"
       },
-      {
-        text: "Authorize Card",
-        route: "authorize-card"
-      },
+      // {
+      //   text: "Authorize Card",
+      //   route: "authorize-card"
+      // },
       {
         text: "Charge By Transfer",
         route: "charge-by-transfer"
@@ -85,10 +85,10 @@ export const navRoutes = [
         text: "Charge By USSD",
         route: "charge-by-ussd"
       },
-      {
-        text: "Get USSD Payment Details",
-        route: "get-ussd-payment-details"
-      }
+      // {
+      //   text: "Get USSD Payment Details",
+      //   route: "get-ussd-payment-details"
+      // }
     ]
   }
 ]

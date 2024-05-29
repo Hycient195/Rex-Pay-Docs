@@ -1,44 +1,26 @@
 import CodeBlock from "@SharedComponents/CodeBlock";
-import { InfoBox, WarningBox } from "@SharedComponents/TextBoxes";
+import Line from "@SharedComponents/Line";
 import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Texts";
 
 export default function CreatePayment() {
   return (
     <main className="grid">
-      <PageHeading>Create payment</PageHeading>
-      <InfoBox>
-        <h3 className="text-lg font-semibold text-slate-800">Lorem ipsum dolor sit amet</h3>
-        <p className="text-slate-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </p>
-      </InfoBox>
+      <PageHeading>Create Payment</PageHeading>
+      <Paragraph>This is the first endpoint that is called regardless of payment method to be used.</Paragraph>
 
-      <ParagraphHeading id="popup">Popup</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading id="collect-customer-information">Collect Customer Information</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
+      <ParagraphHeading>AUTHORIZATION (Basic Auth)</ParagraphHeading>
       <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
         <thead >
           <tr className="border border-slate-400/60 font-bold">
-            <td>Param</td>
-            <td>Required?</td>
-            <td>Description</td>
+            <td>Username</td>
+            <td>Password</td>
           </tr>
         </thead>
         <tbody>
           {
             [
-              [ "key", "Yes", "Lorem ipsum dolor sit amet," ], 
-              [ "email", "Yes", "Lorem ipsum dolor sit amet," ], 
-              [ "amount", "Yes", "Lorem ipsum dolor sit amet," ], 
-              [ "ref", "No", "Lorem ipsum dolor sit amet," ],
-              [ "currency", "No", "Lorem ipsum dolor sit amet," ],
-              [ "channels", "No", "Lorem ipsum dolor sit amet," ],
-              [ "metadata", "No", "Lorem ipsum dolor sit amet," ],
-              [ "label", "No", "Lorem ipsum dolor sit amet," ],
-              [ "callback", "No", "Lorem ipsum dolor sit amet," ],
-              [ "onBankTransferConfirmationPending", "No", "Lorem ipsum dolor sit amet," ],
-              [ "onClose", "No", "Lorem ipsum dolor sit amet," ],
+              [ "Username", "{{USERNAME}}"], 
+              [ "Password", "{{PASSWORD}}"], 
             ].map((row, rowIndex: number) => (
               <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
                 {
@@ -49,213 +31,25 @@ export default function CreatePayment() {
               </tr>
             ))
           }
-          <tr className="border border-slate-300/60">
-            <td colSpan={3} className="font-semibold ">For single <span className="text-green-600">split payments</span></td>
-          </tr>
-          {
-            [
-              [ "subaccount", "No", "Lorem ipsum dolor sit amet," ],
-              [ "transaction_charge", "No", "Lorem ipsum dolor sit amet," ],
-              [ "bearer", "No", "Lorem ipsum dolor sit amet," ],
-            ].map((row, rowIndex: number) => (
-              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
-                {
-                  row.map((col, colIndex: number) => (
-                    <td key={`payment-column-${colIndex}`} className="break-all">{col}</td>
-                  ))
-                }
-              </tr>
-            ))
-          }
-          <tr className="border border-slate-300/60">
-            <td colSpan={3} className="font-semibold">For <span className="text-green-600"> multi_split plit payments</span></td>
-          </tr>
-          {
-            [
-              [ "plan", "Yes", "Lorem ipsum dolor sit amet," ],
-              [ "quantity", "No", "Lorem ipsum dolor sit amet," ],
-            ].map((row, rowIndex: number) => (
-              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
-                {
-                  row.map((col, colIndex: number) => (
-                    <td key={`payment-column-${colIndex}`} className="">{col}</td>
-                  ))
-                }
-              </tr>
-            ))
-          }
         </tbody>
       </table>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
+      <br />
 
-      <CodeBlock language={[ "JavaScript", "HTML" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <InfoBox>
-        <h3 className="text-lg font-semibold text-slate-800">Lorem ipsum dolor sit amet</h3>
-        <p className="text-slate-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </p>
-      </InfoBox>
-
-      <ParagraphHeading id="initialize-transactions">Initialize transactions</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <CodeBlock language={[ "JavaScript" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <ParagraphHeading id="important-notes">Important notes</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading>Important notes</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <InfoBox>
-        <h3 className="text-lg font-semibold text-slate-800">Helpful Tips</h3>
-        <p className="text-slate-800">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </p>
-      </InfoBox>
-
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <CodeBlock language={[ "JavaScript" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <CodeBlock language={[ "JavaScript" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <WarningBox>
-        <h3 className="text-lg font-semibold text-slate-800">Limited support</h3>
-        <p className="text-slate-800">Not all endpoints are supported by our SDKs yet. You&apos;ll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that&apos;s missing in your preferred SDK, please send in a PR.</p>
-      </WarningBox>
-
-      <ParagraphHeading id="verify-transaction">Verify Transaction</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading id="handle-webhook">Handle webhook</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading id="redirect">Redirect</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <WarningBox>
-        <h3 className="text-lg font-semibold text-slate-800">Limited support</h3>
-        <p className="text-slate-800">Not all endpoints are supported by our SDKs yet. You&apos;ll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that&apos;s missing in your preferred SDK, please send in a PR.</p>
-      </WarningBox>
-      
-      <ParagraphHeading id="collect-customer-information">Collect customer information</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <CodeBlock language={[ "JavaScript" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <ParagraphHeading>Initialize transactions</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <CodeBlock language={[ "PHP" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <ParagraphHeading>Verify transactions</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading>Handle webhook</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading id="mobile-sdks">Mobike SDKs</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading id="charge-apis">Charge APIs</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <ParagraphHeading id="use-cases">Use cases</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <CodeBlock language={[ "JSON" ]}>
-        {`Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et 
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi
-condimentum lobortis et. Pellentesque dictum lorem vitae et`}
-      </CodeBlock>
-
-      <ParagraphHeading id="handling-charge-api-responses">Handling charge API responses</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full bg-slate-400/20">
+      <ParagraphHeading>HEADERS</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
         <thead >
           <tr className="border border-slate-400/60 font-bold">
-            <td>Value</td>
-            <td>Description</td>
           </tr>
         </thead>
         <tbody>
           {
             [
-              [ "pending", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et " ],
-              [ "timeout", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et " ],
-              [ "success", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et " ],
-              [ "send_birthday", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et " ],
-              [ "send_otp", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et " ],
-              [ "send_otp", "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et " ],
-              
+              [ "Content-Type", "application/json"], 
             ].map((row, rowIndex: number) => (
-              <tr key={`payment-row-${rowIndex}`} className="border border-slate-400/60">
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60 odd:bg-slate-400/20">
                 {
                   row.map((col, colIndex: number) => (
-                    <td key={`payment-column-${colIndex}`} className=""><span className=" ">{col}</span></td>
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
                   ))
                 }
               </tr>
@@ -264,8 +58,69 @@ condimentum lobortis et. Pellentesque dictum lorem vitae et`}
         </tbody>
       </table>
 
-      <ParagraphHeading>Handle webhooks</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
+      <ParagraphHeading>BODY PARAMS</ParagraphHeading>
+      <CodeBlock copy>
+        {`{
+      "reference": "sman23oyr1122",
+      "amount": 2,
+      "currency": "NGN",
+      "userId": "awoyeyetimilehin@gmail.com",
+      "callbackUrl":"",
+      "metadata": {
+        "email": "awoyeyetimilehin@gmail.com",
+        "customerName":"Victor Musa"
+      }
+}`}
+      </CodeBlock>
+      <Line />
+
+      <ParagraphHeading>Example Request</ParagraphHeading>
+      <CodeBlock copy language={['JavaScript']}>
+        {`var myHeaders = new Headers();
+myHeaders.append("Content-Type",
+"application/json");
+
+var raw = JSON.stringify({
+      "reference": "sm23oyr1122",
+      "amount": 2,
+      "currency": "NGN",
+      "userId": "awoyeyetimilehin@gmail.com",
+      "callbackUrl": "",
+      "metadata": {
+            "email": "awoyeyetimilehin@gmail.com",
+            "customerName": "Victor Musa"
+      }
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));`}
+      </CodeBlock>
+      <Line />
+      
+
+      <ParagraphHeading>Example Response</ParagraphHeading>
+      <CodeBlock copy language={['Body']}>
+        {`{
+  "reference": "sm23oyr1122",
+  "clientId": "timilehinawoyeyeglobalaccelerexcom",
+  "paymentUrl": "https://checkout-dev.globalaccelerex.com/pay/16965521OQbS4EfoEX",
+  "status": "CREATED",
+  "paymentChannel": "DEFAULT",
+  "paymentUrlReference": "16965521OQbS4EfoEX",
+  "externalPaymentReference": "16965521OQbS4EfoEX",
+  "fees": 0.03,
+  "currency": "NGN"
+}`}
+      </CodeBlock>
     </main>
   )
 }
