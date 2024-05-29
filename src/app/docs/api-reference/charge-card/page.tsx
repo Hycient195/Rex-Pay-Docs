@@ -1,208 +1,129 @@
 import CodeBlock from "@SharedComponents/CodeBlock";
 import Line from "@SharedComponents/Line";
-import Param from "@SharedComponents/Param";
+import { ListGroup, ListItem } from "@SharedComponents/Lists";
 import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Texts";
-import { Fragment } from "react";
+
+const steps = [
+  'Call the Create Payment endpoint to initiate a payment transaction.',
+  'Encrypt the chargeCard payload with the rexpay public key and call the Charge Card endpoint with the encrypted payload.',
+  'Decrypt the response from the Charge Card endpoint using your privateKey generated.',
+  'Based on the responseCode of the Charge Card endpoint:',
+  'If 00: Transaction Successful.',
+  'If TO: Call Authorize Card endpoint to finalize the transaction.',
+  'If SO: A redirect link and HTTP method is part of the response which must be triggered to fill in the necessary data.',
+  'Call the Get Transaction Status endpoint to check the status of the transaction.',
+]
 
 export default function CharegeCard() {
-  const data = [
-    {
-      param: "card_number",
-      paramType: "int32",
-      text: "This is the number on the cardholders card. E.g. 5399 6701 2349 0229.",
-      value: "1073837383399"
-    },
-    {
-      param: "cvv",
-      paramType: "int32",
-      text: "This is the number on the cardholders card. E.g. 5399 6701 2349 0229.",
-      value: "664"
-    },
-    {
-      param: "expiry month*",
-      paramType: "int32",
-      text: "Two-digit number representing the card's expiration month. It is usually the first two digits of the expiry date on the card.",
-      value: "09"
-    },
-    {
-      param: "expiry_year*",
-      paramType: "int32",
-      text: "This is the number on the cardholders card. E.g. 5399 6701 2349 0229.",
-      value: "32"
-    },
-    {
-      param: "email*",
-      paramType: "String",
-      text: "The customer's email address.",
-      value: "xyz@gmail.com"
-    },
-    {
-      param: "tx-ref*",
-      paramType: "String",
-      text: "This is a unique reference peculiar to the transaction being carried out.",
-      value: "YOUR_PAYMENT_REF"
-    },
-    {
-      param: "body",
-      paramType: "object",
-      text: "This is an object that contains the authorization details of the card you want to charge. The authorization instructions for card charges are returned in the initiate charge call as `meta.authorization`",
-      value: ""
-    },
-  ]
-
-  const optionalParameters = [
-    {
-      param: "currency",
-      paramType: "string",
-      text: "This is the specified currency to charge in.",
-    },
-    {
-      param: "phone number",
-      paramType: "string",
-      text: "This is the phone number linked to the customer's bank account or mobile money account",
-    },
-    {
-      param: "fullname ",
-      paramType: "string",
-      text: "The customer's full name.",
-    },
-    {
-      param: "preauthorize",
-      paramType: "boolean",
-      text: "This should be set to true for preauthoize card transactions.",
-    },
-    {
-      param: "redirect_url",
-      paramType: "string",
-      text: "The redirect for customers after completing their payment. (3DSecure only).",
-    },
-    {
-      param: "client_ip",
-      paramType: "string",
-      text: "IP - Internet Protocol. This represents the current IP address of the customer carrying out the transaction.",
-    },
-    {
-      param: "device_fingerprint",
-      paramType: "boolean",
-      text: "This is the fingerprint for the device being used. It can be generated using a library on whatever platform is being used.",
-    },
-    {
-      param: "payment_plan",
-      paramType: "boolean",
-      text: "This is the id of a previously created payment plan needed to add a card user to the payment plan.",
-    },
-    {
-      param: "meta",
-      paramType: "string",
-      text: "This is used to include additional payment information.",
-    },
-  ]
   return (
     <main className="grid">
-      <PageHeading>Charge card</PageHeading>
-      <Paragraph>The charge APIs help you to collect payments using different payment methods.</Paragraph>
+      <PageHeading>Charge Card</PageHeading>
 
-      <ParagraphHeading>Cards</ParagraphHeading>
-      <Paragraph>Collect card payments with RexPay. We implore you read the method overview before you proceed.</Paragraph>
+      <ParagraphHeading>
+        <Paragraph>{'{{URL}}/api/cps/v1/chargeCard'}</Paragraph>
+      </ParagraphHeading>
 
-      <div className="flex flex-row items-center gap-2 lg:gap-3">
-        <span className="px-3 py-1 rounded-lg bg-gray-300">POST</span>
-        <p className="text-slate-800">https://api.rexpay.com/v3/charges?type=card</p>
-      </div>
+      <Paragraph>CARD PAYMENT METHOD</Paragraph>
 
-      <CodeBlock copy language={["Node.js", "PHP", "Ruby", "Sample Request"]}>
-        {`function encrypt(encryptionKey, payload) {
-  const text = JSON.stringify(payload);
-  const forge = require("node-forge");
-  const cipher = forge.cipher.createCipher(
-    "3DES-ECB",
-    forge.util.createBuffer(encryptionKey)
-  );
-  cipher.start({iv: ""});
-  cipher.update(forge.util.createBuffer(text, "utf-8"));
-  cipher.finish();
-  const encrypted = cipher.output;
-  return forge.util.encode64(encrypted.getBytes());
+      <Paragraph>
+        The CARD payment method allows users to make payments using credit/debit cards. The following steps outline the process:
+      </Paragraph>
+      
+      <ListGroup>
+        {
+          steps.map((step, index: number) => (
+            <ListItem index={index} key={`video-points=${index}`}>
+              {step}
+            </ListItem>
+          ))
+        }
+      </ListGroup>
+
+      <ParagraphHeading>Object to encrypt</ParagraphHeading>
+      <CodeBlock copy>
+        {`{
+  "reference" : "(reference generated on createPayment",
+  "amount" : "100",
+  "customerId" : "tname@gmail.com",
+  "cardDetails" : {
+  "authDataVersion" : "1",
+  "pan" : "5976222222299999",
+  "expiryDate" : "1230",
+  "cvv2" : "456",
+  "pin" : "4178"
+  }
+}`}
+      </CodeBlock>
+      
+      <ParagraphHeading>AUTHORIZATION</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Username</td>
+            <td>Password</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "Username", "{{USERNAME}}"], 
+              [ "Password", "{{PASSWORD}}"], 
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+
+      <ParagraphHeading>BODY PARAMS</ParagraphHeading>
+      <CodeBlock copy>
+        {`{
+    "encryptedRequest": "-----BEGIN PGP MESSAGE-----\nVersion: Didisoft OpenPGP Library for Java 3.2\n\nhIwDT9UVaCho7XYBA/9W5WiA9I4mQ67igGjKuvVRhbZojqhNKE6S0dXU3HC8BmOm\nj6LrdLsAe5bhILhPRRf2xl/oaODWy4dUf7Sstx8gcMJhJuvmpYLX6OiYjhhBTK+i\nmthv+njBLkOdK/0/Ugf+nY/+12IAi/u+Z8/yl17ye5aHLEVHl2vKGPAcSACX39LA\nOQHGM9z6ccc0n3idnZRMdqb5qkkpsy3InbWzSSzf/WK0Ad7Cc+ASz22OaSfC5Eux\njmp7Dblseoif00XWDM6izeeo/DC2Z79oJaeQ+yezIBtZcyTurU1kQtz0UYgsgofY\nphzHCFg0POQVLP7PYve2G8OAx+M7O8bra3TzZQhiQVCBMP3nt/YuWHEAoqOX8QbB\nxcQs9EVRpP7HeHmngWSCN1l0qPc8XR50A0RJ/5lnBN4nvRq7eguC4Ad0eF9Frbe2\n7fGeR3fCouDjVxHwox0esSR8drVuk2tLOktnUd2LY92mvgcOdrDXkA+tlmkMFUk6\njkU2bfyEf81q9w==\n=i9oR\n-----END PGP MESSAGE-----\n"
 }`}
       </CodeBlock>
       <Line />
 
-      <ParagraphHeading>BODY PARAMS</ParagraphHeading>
-      <Param text="amount" type="int32" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">This is the amount to be charged for the transaction</p>
-        <div className="px-2 py-1 border text-sm border-gray-300">10</div>
-      </div>
-      <CodeBlock language={[ "200 Okay", "400 Bad Request"]}>
-        {`{
-  "status": "success",
-  "message": "Charge initiated",
-  "data": {
-      "id": 288192886,
-    "tx_ref": "sample_ref",
-    "flw_ref": "FLW275389391",
-    "device_fingerprint": "N/A",
-    "amount": 100,
-    "charged_amount": 100,
-    "app_fee": 1.4,
-    "merchant_fee": 0,
-    "processor_response": "Kindly enter the OTP sent to *******0328",
-  }`}
+      <ParagraphHeading>Example Request</ParagraphHeading>
+      <CodeBlock copy language={['JavaScript']}>
+        {`var myHeaders = new Headers();
+
+var raw = "{\r\n    \"encryptedRequest\": \"-----BEGIN PGP MESSAGE-----\\nVersion: Didisoft OpenPGP Library for Java 3.2\\n\\nhIwDT9UVaCho7XYBA/9W5WiA9I4mQ67igGjKuvVRhbZojqhNKE6S0dXU3HC8BmOm\\nj6LrdLsAe5bhILhPRRf2xl/oaODWy4dUf7Sstx8gcMJhJuvmpYLX6OiYjhhBTK+i\\nmthv+njBLkOdK/0/Ugf+nY/+12IAi/u+Z8/yl17ye5aHLEVHl2vKGPAcSACX39LA\\nOQHGM9z6ccc0n3idnZRMdqb5qkkpsy3InbWzSSzf/WK0Ad7Cc+ASz22OaSfC5Eux\\njmp7Dblseoif00XWDM6izeeo/DC2Z79oJaeQ+yezIBtZcyTurU1kQtz0UYgsgofY\\nphzHCFg0POQVLP7PYve2G8OAx+M7O8bra3TzZQhiQVCBMP3nt/YuWHEAoqOX8QbB\\nxcQs9EVRpP7HeHmngWSCN1l0qPc8XR50A0RJ/5lnBN4nvRq7eguC4Ad0eF9Frbe2\\n7fGeR3fCouDjVxHwox0esSR8drVuk2tLOktnUd2LY92mvgcOdrDXkA+tlmkMFUk6\\njkU2bfyEf81q9w==\\n=i9oR\\n-----END PGP MESSAGE-----\\n\"\r\n}";
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("{{URL}}/api/cps/v1/chargeCard", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));`}
       </CodeBlock>
+      <Line />
+      
 
-      {
-        data.map(each => (
-          <Fragment key={each.param}>
-            <Param text={each.param} type={each.paramType} />
-            <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-              <p className="text-slate-800">{each.text}</p>
-              { each.value && <div className="px-2 py-1 border text-sm border-gray-300">{each.value}</div> }
-            </div>
-            <Line />
-          </Fragment>
-        ))
-      }
-
-      <details className="mt-5 [&[open]_summary_span.opened]:hidden [&:not([open])_summary_span.closed]:hidden">
-        <summary className="font-bold text-xl mb-8 cursor-pointer">
-          <span className="opened">Show optional parameters</span>
-          <span className="closed">Hide optional parameters</span>
-        </summary>
-        {
-          optionalParameters.map(each => (
-            <Fragment key={each.param}>
-              <Param text={each.param} type={each.paramType} />
-              <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-                <p className="text-slate-800">{each.text}</p>
-              </div>
-              <Line />
-            </Fragment>
-          ))
-        }
-
-        <div className="border border-gray-300 bg-gray-100">
-          <div className="px-[3%] py-[2%]">
-            <Param text="meta" type="string" />
-            <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-              <p className="text-slate-800">This could be the extra information you want to pass.</p>
-            </div>
-          </div>
-          <Line className="!bg-gray4300 !mb-0" />
-          <div className="px-[3%] pt-[2%] pb-[3%]">
-            <Param text="sideNote" type="string" />
-            <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-              <p className="text-slate-800">This could be any message you&apos;d like to associate with this call.</p>
-            </div>
-          </div>
-        </div>
-      </details>
-
-      <ParagraphHeading className="!mt-14">HEADERS</ParagraphHeading>
-      <Param text="Authorization*" type="string" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">Pass your secret key as a bearer token in the request header to authorize this call. Unauthorized calls would return a 401 http code or raise unauthorized error in the different SDKs.</p>
-        {/* <div className="px-2 py-1 border text-sm border-gray-300">10</div> */}
-      </div>
+      <ParagraphHeading>Example Response</ParagraphHeading>
+      <CodeBlock copy language={['Body']}>
+        {`{
+  "reference": "sm23oyr1122",
+  "clientId": "timilehinawoyeyeglobalaccelerexcom",
+  "paymentUrl": "https://checkout-dev.globalaccelerex.com/pay/16965521OQbS4EfoEX",
+  "status": "CREATED",
+  "paymentChannel": "DEFAULT",
+  "paymentUrlReference": "16965521OQbS4EfoEX",
+  "externalPaymentReference": "16965521OQbS4EfoEX",
+  "fees": 0.03,
+  "currency": "NGN"
+}`}
+      </CodeBlock>
     </main>
   )
 }

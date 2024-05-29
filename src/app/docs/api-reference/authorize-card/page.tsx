@@ -2,10 +2,10 @@ import CodeBlock from "@SharedComponents/CodeBlock";
 import Line from "@SharedComponents/Line";
 import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Texts";
 
-export default function CreatePayment() {
+export default function AuthorizeCard() {
   return (
     <main className="grid">
-      <PageHeading>Create Payment</PageHeading>
+      <PageHeading>Authorize Card</PageHeading>
 
       <ParagraphHeading>
         <Paragraph>{'{{URL}}/api/pgs/payment/v2/createPayment'}</Paragraph>
