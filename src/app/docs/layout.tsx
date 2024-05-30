@@ -19,7 +19,7 @@ export default function Layout({ children }: IProps) {
   const lastPath = paths[(paths.length-1)];
 
   return (
-    <div className="grid fixed w-full grid-cols-1 lg:grid-cols-[max-content_1fr]">
+    <div className="grid fixed w-full grid-cols-1 lg:grid-cols-[max-content_1fr]  text-sm">
       <aside className="hidden lg:block max-w-[270px] w-[20vw] min-w-[250px] h-screen border bg-zinc-100 border-r-zinc-100">
         <Link href="/" className="px-5 py-5 flex flex-row items-center gap-x-2">
           <Image width={140} height={70} alt="Logo" src="/rexpay-logo.png" />
@@ -82,7 +82,7 @@ export default function Layout({ children }: IProps) {
                 </div>
               </footer>
             </div>
-            {
+            {/* {
               pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation]
               && (
                 <div className="  min-w-[300px sticky h-max top-[90px] max-md:hidden">
@@ -97,7 +97,7 @@ export default function Layout({ children }: IProps) {
                   </ul>
                 </div>
               )
-            }
+            } */}
           
           
           {/* <footer className=" px-4 lg:px-6 bottom-0 bg-white ">
