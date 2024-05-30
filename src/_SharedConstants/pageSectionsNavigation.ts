@@ -13,17 +13,16 @@ export const pageSectionNavigation = {
     { text: "Authorizing API calls", id: "authorizing-api-calls" },
   ],
   "payment-methods": [
-    { text: "Account settings", id: "account-settings" },
-    { text: "Per payment", id: "per-payment" },
     { text: "Supported payment methods", id: "supported-payment-methods" },
-    { text: "Expiring payments", id: "expiring-payments" },
+    { text: "Card", id: "card" },
+    { text: "Transfer", id: "transfer" },
+    { text: "USSD", id: "ussd" },
   ],
   "checkout-page": [
     { text: "Step 1. Assemble payment details", id: "assemble-payment-details" },
     { text: "Step 2. Get a payment link", id: "get-a-payment-link" },
-    { text: "Step 3. Redirect the user to the payment link", id: "redirect-user-to-payment-link" },
+    { text: "Step 3. Redirect the customer back to merchant website", id: "redirect-the-customer-back-to-merchant-website" },
     { text: "Step 4. After the payment", id: "after-the-payment" },
-    { text: "What if the payment fails?", id: "if-payment-fails" },
   ],
   "create-normal-payment": [
     { text: "Popup", id: "popup" },

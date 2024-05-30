@@ -27,10 +27,7 @@ export default function CodeBlock({ children, language, className, copy }: IProp
         // reset icon state
         setTimeout(() => setIsSuccessfullyCopied(false), 3000);
       })
-      .catch(err => {
-        console.error('Failed to copy text: ', err);
-      }
-    );
+      .catch(err => false);
   }
   
   return (

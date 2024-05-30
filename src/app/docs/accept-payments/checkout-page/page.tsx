@@ -14,45 +14,53 @@ export default function CheckoutPage() {
       <Paragraph>There are two ways to specify your accepted payment methods.</Paragraph>
 
       <ParagraphHeading id="assemble-payment-details">Step 1. Assemble payment details</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
+      <Paragraph>From your server, call our create payment endpoint with the payment details.</Paragraph>
 
-      <ParagraphHeading>Per payment</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
+      <CodeBlock copy language={['JavaScript']}>{
+      `var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
 
-      <InfoBox>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisiconntum lobortis et. Pellentesque dictum lorem vitae et  Pellen fhgjhkjzsd Lorem ipsum dolor sit amet, consectetur adipiscing</InfoBox>
+var raw = JSON.stringify({
+  "reference": "sm23oyr1122",
+  "amount": 2,
+  "currency": "NGN",
+  "userId": "awoyeyetimilehin@gmail.com",
+  "callbackUrl": "https://your_callback_url.com",
+  "metadata": {
+    "email": "awoyeyetimilehin@gmail.com",
+    "customerName": "Victor Musa"
+  }
+});
 
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum </Paragraph>
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
 
+fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));`}
+      </CodeBlock>
+      <br />
+      
       <ParagraphHeading id="get-a-payment-link">Step 2: Get a payment link</ParagraphHeading>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum </Paragraph>
+      <Paragraph>We&apos;ll return a link to a payment page. Redirect your customer to this link to make the payment.</Paragraph>
 
-      <CodeBlock copy>{
-      `const response = await got.post("https://api.flutterwave.com/v3/payments", {
-  headers: {
-    Authorization: \`Bearer \${process.env.FLW_SECRET_KEY}\`
-    },
-  json: {
-    // Your payload
-  }
-});`}</CodeBlock>
-      <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
+      <figure className="relative my-4 w-full h-auto aspect-video bg-black/30">
+        <Image fill src={sharedImages.checkoutResp} alt="checkout response" />
+      </figure>
 
-      <CodeBlock copy>{
-      `const response = await got.post("https://api.flutterwave.com/v3/payments", {
-  headers: {
-    Authorization: \`Bearer \${process.env.FLW_SECRET_KEY}\`
-    },
-  json: {
-    // Your payload
-  }
-});`}</CodeBlock>
+      <Paragraph>After redirecting to the payment URL, you will see the checkout page as shown below.</Paragraph>
+      <figure className="relative my-4 w-full h-auto aspect-video bg-black/30">
+        <Image fill src={sharedImages.redirectUserToPayment} alt="Authentication live mode" />
+      </figure>
+      
 
-    <ParagraphHeading id="redirect-user-to-payment-link">Step 3: Redirect the user to the payment link</ParagraphHeading>
-    <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph>
-
-    <figure className="relative my-4 w-full h-auto aspect-video bg-black/30">
-      <Image fill src={sharedImages.redirectUserToPayment} alt="Authentication live mode" />
-    </figure>
+    <ParagraphHeading id="redirect-the-customer-back-to-merchant-website">Step 3: Redirect the customer back to merchant website</ParagraphHeading>
+    <Paragraph>When the transaction is completed, we&apos;ll redirect the customer back to you.</Paragraph>
 
     <ParagraphHeading id="after-the-payment">Step 4: After the payment</ParagraphHeading>
     <Paragraph>Four things will happen when payment is done (successful):</Paragraph>
@@ -60,10 +68,9 @@ export default function CheckoutPage() {
     <ListGroup className="gap-3">
       {
         [
-          "We'll redirect to your redirect_url with status, tx_ref, and transaction_id query parameters after payment is complete.",
-          "We'll send you a webhook if you have that enabled. Learn more about webhooks and see examples here.",
-          "We'll send an email receipt to your customer if the payment was successful (unless you've disabled that).",
-          "We'll send you an email notification (unless you&apos;ve disabled that).",
+          "We'll redirect to your callback URL after payment is complete.",
+          "We'll send an email receipt to your customer if the payment was successful (if not disabled).",
+          "We'll send you an email notification (if not disabled).",
         ].map((each, index: number) => (
           <ListItem index={index} key={`payment-item-${index}`}>{each}</ListItem>
         ))
@@ -71,21 +78,6 @@ export default function CheckoutPage() {
     </ListGroup>
 
     <Paragraph>On your server, you should handle the redirect and always verify the final state of the transaction.</Paragraph>
-    <Paragraph>Here&apos;s what transaction verification could look like in a Node.js app with our backend SDK:</Paragraph>
-
-    <CodeBlock copy>{
-      `const response = await got.post("https://api.flutterwave.com/v3/payments", {
-  headers: {
-    Authorization: \`Bearer \${process.env.FLW_SECRET_KEY}\`
-    },
-  json: {
-    // Your payload
-  }
-});`}</CodeBlock>
-
-    <ParagraphHeading id="if-payment-fails">What if the payment fails?</ParagraphHeading>
-    <Paragraph>If the payment attempt fails (for instance, due to insufficient funds), you don&apos;t need to do anything. We&apos;ll keep the payment page open, so the customer can try again until the payment succeeds or they choose to cancel, after which we&apos;ll redirect to the redirect_url with the query parameters tx_ref and a status of failed.</Paragraph>
-    <Paragraph>If you have webhooks enabled, we&apos;ll send you a notification for each failed payment attempt. This is useful in case you want to later reach out to customers who had issues paying. See our <Link href="" className="text-red-700/60">webhooks guide</Link> for an example.</Paragraph>
     </main>
   )
 }

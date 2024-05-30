@@ -58,6 +58,10 @@ export const navRoutes = [
     route: "api-reference",
     subroutes: [
       {
+        text: "Insert Public Key",
+        route: "insert-public-key"
+      },
+      {
         text: "Create Payment",
         route: "create-payment",
       },
@@ -84,10 +88,6 @@ export const navRoutes = [
       {
         text: "Get USSD Payment Details",
         route: "get-ussd-payment-details"
-      },
-      {
-        text: "Insert Public Key",
-        route: "insert-public-key"
       }
     ]
   }
