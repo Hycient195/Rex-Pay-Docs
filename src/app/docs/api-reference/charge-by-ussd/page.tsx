@@ -1,142 +1,125 @@
 import CodeBlock from "@SharedComponents/CodeBlock";
 import Line from "@SharedComponents/Line";
-import Param from "@SharedComponents/Param";
+import { ListGroup, ListItem } from "@SharedComponents/Lists";
 import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Texts";
-import { Fragment } from "react";
 
-export default function CharegeCard() {
-  const optionalParameters = [
-    {
-      param: "phone number",
-      paramType: "string",
-      text: "This is the phone number linked to the customer's bank account or mobile money account",
-    },
-    {
-      param: "fullname ",
-      paramType: "string",
-      text: "The customer's full name.",
-    },
-    {
-      param: "client_ip",
-      paramType: "string",
-      text: "IP - Internet Protocol. This represents the current IP address of the customer carrying out the transaction.",
-    },
-    {
-      param: "device_fingerprint",
-      paramType: "boolean",
-      text: "This is the fingerprint for the device being used. It can be generated using a library on whatever platform is being used.",
-    },
-    {
-      param: "meta",
-      paramType: "object",
-      text: "This is used to include additional payment information.",
-    }
-  ]
+const steps = [
+  'Call the Create Payment endpoint to initiate a payment transaction.',
+  'Call the Make Payment endpoint with the necessary details to complete the payment.',
+  'Input the provider response into your USSD device to proceed with the payment.',
+  'If a callbackUrl is provided in the Create Payment payload, you will receive transaction notifications',
+  'To retrieve payment details, call the Get Payment Details endpoint.',
+]
 
+export default function CharegeByUssd() {
   return (
     <main className="grid">
       <PageHeading>Charge By USSD</PageHeading>
-      <Paragraph>Collect USSD payments from customers in Nigeria. We recommend you read the method overview before you proceed.</Paragraph>
 
-      <div className="flex flex-row items-center gap-2 lg:gap-3 mt-5">
-        <span className="px-3 py-1 rounded-lg bg-gray-300">POST</span>
-        <p className="text-slate-800">https://api.rexpay.com/v3/charges?type=ussd</p>
-      </div>
+      <ParagraphHeading>
+        <Paragraph>{'{{URL}}/api/pgs/payment/v1/makePayment'}</Paragraph>
+      </ParagraphHeading>
 
-      <Line />
+      <Paragraph>USSD PAYMENT METHOD </Paragraph>
 
-      <ParagraphHeading>BODY PARAMS</ParagraphHeading>
-      <Param text="account_bank" type="string" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">This is the Bank numeric code. It can be gotten from the banks endpoint.</p>
-        <div className="px-2 py-1 border text-sm border-gray-300">044</div>
-      </div>
-
-      <CodeBlock copy language={["Sample Request", "Sample Request (with expiry)" ]}>
-        {`{
-  "tx_ref": "MC-15852309v5050e8y",
-  "account_bank": "057",
-  "amount": "10",
-  "currency": "NGN",
-  "email": "user@example.com",
-  "phone_number": "054709929220",
-  "fullname": "Yolande Aglaé Colbert"
-}`}
-      </CodeBlock>
-
-      <CodeBlock language={[ "200 Okay", "400 Bad Request"]}>
-        {`{
-  "status": "success",
-  "message": "Charge initiated",
-  "data": {
-    "id": 2382777,
-    "tx_ref": "MC-15852309v5050e8y",
-    "flw_ref": "WKOM430901627909006960",
-    "device_fingerprint": "N/A",
-    "amount": 10,
-    "charged_amount": 10,
-    "app_fee": 481.5,
-    "merchant_fee": 0,
-    "processor_response": "Transaction in progress",
-    "auth_model": "USSD",
-    "currency": "NGN",
-    "ip": "::ffff:127.0.0.1",
-    "narration": "Yolande Aglaé Colbert",
-    "status": "pending"
-}`}
-      </CodeBlock>
-
-      <Param text="amount" type="int32" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">This is the amount to be charged for the transaction</p>
-        <div className="px-2 py-1 border text-sm border-gray-300">10</div>
-      </div>
-      <Line />
-
-      <Param text="email" type="String" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">The customer&apos;s email address.</p>
-        <div className="px-2 py-1 border text-sm border-gray-300">xyz@gmail.com</div>
-      </div>
-      <Line />
-
-      <Param text="tx-ref" type="String" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">This is a unique reference peculiar to the transaction being carried out.</p>
-        <div className="px-2 py-1 border text-sm border-gray-300">YOUR_PAYMENT_REF</div>
-      </div>
-      <Line />
-
-      <Param text="currency" type="String" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">This is the specified currency to charge in.</p>
-      </div>
-      <Line />
-
-      <details className="mt-5 [&[open]_summary_span.opened]:hidden [&:not([open])_summary_span.closed]:hidden">
-        <summary className="font-bold text-xl mb-8 cursor-pointer">
-          <span className="opened">Show optional parameters</span>
-          <span className="closed">Hide optional parameters</span>
-        </summary>
+      <Paragraph>
+        The USSD payment method allows users to make payments using Unstructured Supplementary Service Data (USSD) technology. The following steps outline the process:
+      </Paragraph>
+      
+      <ListGroup>
         {
-          optionalParameters.map(each => (
-            <Fragment key={each.param}>
-              <Param text={each.param} type={each.paramType} />
-              <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-                <p className="text-slate-800">{each.text}</p>
-              </div>
-              <Line />
-            </Fragment>
+          steps.map((step, index: number) => (
+            <ListItem index={index} key={`video-points=${index}`}>
+              {step}
+            </ListItem>
           ))
         }
-      </details>
+      </ListGroup>
+      
+      <ParagraphHeading>AUTHORIZATION</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Username</td>
+            <td>Password</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "Username", "{{USERNAME}}"], 
+              [ "Password", "{{SECRETKEY}}"], 
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
 
-      <ParagraphHeading className="!mt-14">HEADERS</ParagraphHeading>
-      <Param text="Authorization" type="string" />
-      <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-        <p className="text-slate-800">Pass your secret key as a bearer token in the request header to authorize this call. Unauthorized calls would return a 401 http code or raise unauthorized error in the different SDKs.</p>
-        {/* <div className="px-2 py-1 border text-sm border-gray-300">10</div> */}
-      </div>
+      <ParagraphHeading>BODY PARAMS</ParagraphHeading>
+      <CodeBlock copy>
+        {`{
+  "reference":"rexpaydocUSSD",
+  "userId":"08102164545",
+  "amount":50,
+  "currency":"NGN",
+  "callbackUrl":"http://pgs.com",
+  "paymentChannel":"USSD"
+}`}
+      </CodeBlock>
+      <Line />
+
+      <ParagraphHeading>Example Request</ParagraphHeading>
+      <CodeBlock copy language={['JavaScript']}>
+        {`var myHeaders = new Headers();
+myHeaders.append("Content-Type", "application/json");
+
+var raw = JSON.stringify({
+  "reference": "rexpaydocUSSD",
+  "userId": "08102164545",
+  "amount": 50,
+  "currency": "NGN",
+  "callbackUrl": "http://pgs.com",
+  "paymentChannel": "USSD"
+});
+
+var requestOptions = {
+  method: 'POST',
+  headers: myHeaders,
+  body: raw,
+  redirect: 'follow'
+};
+
+fetch("{{URL}}/api/pgs/payment/v1/makePayment", requestOptions)
+  .then(response => response.text())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));`}
+      </CodeBlock>
+      <Line />
+      
+
+      <ParagraphHeading>Example Response</ParagraphHeading>
+      <CodeBlock copy language={['Json']}>
+        {`{
+  "reference": "rexpaydocUSSD",
+  "clientId": "gaprodtest",
+  "paymentUrl": "https://checkout.myrexpay.ng/pay/16965549p3a6Dbdm6I",
+  "status": "ONGOING",
+  "paymentChannel": "USSD",
+  "providerResponse": "1589#",
+  "paymentUrlReference": "16965549p3a6Dbdm6I",
+  "providerExtraInfo": "4001GPG1**4001GPG10000001",
+  "externalPaymentReference": "16965549p3a6Dbdm6I",
+  "fees": 0.75,
+  "currency": "NGN"
+}`}
+      </CodeBlock>
     </main>
   )
 }

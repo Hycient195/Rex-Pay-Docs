@@ -41,8 +41,8 @@ export const pageSectionNavigation = {
     { text: "Handling charge API responses", id: "handling-charge-api-responses" }
 ],
   "get-transaction-status": [
-    { text: "How to verify payments", id: "how-to-verify-payments" },
-    { text: "Collect Customer Information", id: "collect-user-information" },
-    { text: "Change returning users", id: "change-returning-users" },
+    // { text: "How to verify payments", id: "how-to-verify-payments" },
+    // { text: "Collect Customer Information", id: "collect-user-information" },
+    // { text: "Change returning users", id: "change-returning-users" },
   ]
 }

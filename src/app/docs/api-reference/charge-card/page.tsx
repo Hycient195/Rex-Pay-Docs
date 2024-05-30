@@ -67,7 +67,7 @@ export default function CharegeCard() {
           {
             [
               [ "Username", "{{USERNAME}}"], 
-              [ "Password", "{{PASSWORD}}"], 
+              [ "Password", "{{SECRETKEY}}"], 
             ].map((row, rowIndex: number) => (
               <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
                 {
@@ -111,7 +111,7 @@ fetch("{{URL}}/api/cps/v1/chargeCard", requestOptions)
       
 
       <ParagraphHeading>Example Response</ParagraphHeading>
-      <CodeBlock copy language={['Body']}>
+      <CodeBlock copy language={['Json']}>
         {`{
   "reference": "sm23oyr1122",
   "clientId": "timilehinawoyeyeglobalaccelerexcom",

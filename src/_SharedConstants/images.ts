@@ -13,10 +13,11 @@ import android from "@public/images/shared/android.png";
 import ios from "@public/images/shared/ios.png";
 import flutter from "@public/images/shared/flutter.png";
 import redirectUserToPayment from "@public/images/shared/user-to-payment-link.png";
+import authCard from "@public/images/shared/auth-card.png";
 
 const sharedImages = {
   home1, home2, home3, home4, auth1, redirectUserToPayment,
-  react, angular, java, cSharp, python, php, android, ios, flutter
+  react, angular, java, cSharp, python, php, android, ios, flutter, authCard
 }
 
 export default sharedImages;
