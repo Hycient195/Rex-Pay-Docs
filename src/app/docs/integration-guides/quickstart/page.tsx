@@ -6,14 +6,14 @@ const stepOne = [
   'Collect payments using simulated card data',
   'Make transfers to dummy accounts',
   'Configure your integration',
-  'Complete your KYC and go live.'
+  'Complete your KYC and go live.'
 ]
 
 const stepTwo = [
   'Redirect Checkout',
   'In-app Checkout',
   'Libraries and Plugins',
-  'Direct API Integrations'
+  'Direct API Integrations'
 ]
 
 export default function QuickStart() {
@@ -25,7 +25,7 @@ export default function QuickStart() {
       </Paragraph>
       <ParagraphHeading>Step 1. Create an account</ParagraphHeading>
       <Paragraph>Begin your journey by creating a <a href="https://www.myrexpay.ng/signup" style={{color: '#FF4512'}}>RexPay account</a>. Upon signing up, you will automatically have access to the test environment.</Paragraph>
-      <figure className="relative w-full max-w-screen-md h-auto aspect-video bg-black/30">
+      {/* <figure className="relative w-full max-w-screen-md h-auto aspect-video bg-black/30">
         <iframe
           style={{
             width: '100%',
@@ -35,7 +35,7 @@ export default function QuickStart() {
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         ></iframe>
-      </figure>
+      </figure> */}
       <Paragraph>In the test environment, you would be able to:</Paragraph>
       {/* 
       In the test environment, you would be able to:
@@ -73,10 +73,12 @@ export default function QuickStart() {
       <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph> */}
 
       <ParagraphHeading>Step 3. Complete your KYC</ParagraphHeading>
-      <Paragraph>In order to take your account live, we will need to review your account details and profile it correctly to ensure you have the best experience. In order to be able to complete this review, you will need to submit your business documents as well as any other relevant information that may help us with the assessment.</Paragraph>
+      {/* <Paragraph>In order to take your account live, we will need to review your account details and profile it correctly to ensure you have the best experience. In order to be able to complete this review, you will need to submit your business documents as well as any other relevant information that may help us with the assessment.</Paragraph> */}
+      <Paragraph>To facilitate the activation of your account, it is imperative that we thoroughly review your account details and appropriately profile them to optimize your experience. To initiate this review process, we request the submission of your business documents, along with any additional pertinent information that may assist us in conducting a comprehensive assessment.</Paragraph>
 
       <ParagraphHeading>Step 4. Accept payment from your customers</ParagraphHeading>
-      <Paragraph>You can start collecting payments from your customers once your account has been approved (check out this quick tutorial to learn how to use your dashboard once it has been approved).</Paragraph>
+      {/* <Paragraph>You can start collecting payments from your customers once your account has been approved (check out this quick tutorial to learn how to use your dashboard once it has been approved).</Paragraph> */}
+      <Paragraph>Upon approval of your account, you will gain the capability to commence collecting payments from your customers. Please refer to this brief tutorial to acquaint yourself with the functionalities of your dashboard post-approval.</Paragraph>
     </main>
   )
 }

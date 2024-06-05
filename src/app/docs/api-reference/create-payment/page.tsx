@@ -81,11 +81,11 @@ var raw = JSON.stringify({
       "reference": "sm23oyr1122",
       "amount": 2,
       "currency": "NGN",
-      "userId": "awoyeyetimilehin@gmail.com",
+      "userId": "ga@gmail.com",
       "callbackUrl": "",
       "metadata": {
-            "email": "awoyeyetimilehin@gmail.com",
-            "customerName": "Victor Musa"
+            "email": "ga@gmail.com",
+            "customerName": "Global Accelerex"
       }
 });
 

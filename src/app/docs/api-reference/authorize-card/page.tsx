@@ -3,7 +3,6 @@ import Line from "@SharedComponents/Line";
 import { PageHeading, Paragraph, ParagraphHeading } from "@SharedComponents/Texts";
 import sharedImages from "@SharedConstants/images";
 import Image from "next/image";
-import Link from "next/link";
 
 export default function AuthorizeCard() {
   return (
@@ -36,7 +35,7 @@ export default function AuthorizeCard() {
         </Paragraph>
 
         <Paragraph>
-          You can generate your pgp key pair via online sites such as <Link href={'https://pgptool.org'} style={{color: '#FF4512'}}>https://pgptool.org</Link>.
+          You can generate your pgp key pair via online sites such as <a href={'https://pgptool.org'} target="_blank" rel="no-referrer" style={{color: '#FF4512'}}>https://pgptool.org</a>.
         </Paragraph>
 
         <Paragraph>
@@ -45,7 +44,7 @@ export default function AuthorizeCard() {
       </div>
 
       <figure className="relative my-4 w-full max-w-screen-md h-auto aspect-video">
-        <Image src={sharedImages.authCard} alt="Authentication live mode" />
+        <Image fill src={sharedImages.authCard} alt="Authentication live mode" />
       </figure>
 
       <div>
@@ -59,6 +58,7 @@ export default function AuthorizeCard() {
               <td>Expiry</td>
               <td>PIN</td>
               <td>CVV</td>
+              <td></td>
             </tr>
           </thead>
           <tbody>
@@ -74,10 +74,10 @@ export default function AuthorizeCard() {
                 ['Incorrect PIN',	'5399834697894723',	'0131',	'5172',	'883',	'12345'], 
                 ['Verve Card - Card enrolment',	'5531882884804517',	'0932',	'5092',	'564',	'12345']
               ].map((row, rowIndex: number) => (
-                <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60  odd:bg-slate-400/20">
+                <tr key={`auth-card-row-${rowIndex}`} className="border border-slate-300/60  odd:bg-slate-400/20">
                   {
                     row.map((col, colIndex: number) => (
-                      <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                      <td key={`auth-card-column-${colIndex}`} className=" break-all">{col}</td>
                     ))
                   }
                 </tr>

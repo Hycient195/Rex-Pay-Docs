@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      animation: {
+        "fade-in": "fade-in 500ms ease-in",
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -16,6 +19,16 @@ const config: Config = {
       },
       colors: {
         test: "red"
+      },
+      keyframes: {
+        "fade-in": {
+          from: {
+            opacity: "0"
+          },
+          to: {
+            opacity: "100"
+          }
+        },
       }
     },
   },

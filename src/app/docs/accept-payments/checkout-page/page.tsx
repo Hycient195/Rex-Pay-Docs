@@ -10,7 +10,8 @@ export default function CheckoutPage() {
   return (
     <main className="">
       <PageHeading>Checkout page</PageHeading>
-      <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you&apos;re willing to accept from your customers.</Paragraph>
+      {/* <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you&apos;re willing to accept from your customers.</Paragraph> */}
+      <Paragraph> RexPay supports a variety of payment methods, allowing your customers to pay from anywhere. When accepting payments, you can accept payments from all available methods, while your customers can select their preferred payment method and switch to a different one at any time before successful completion of the transaction</Paragraph>
       <Paragraph>There are two ways to specify your accepted payment methods.</Paragraph>
 
       <ParagraphHeading id="assemble-payment-details">Step 1. Assemble payment details</ParagraphHeading>
@@ -24,11 +25,11 @@ var raw = JSON.stringify({
   "reference": "sm23oyr1122",
   "amount": 2,
   "currency": "NGN",
-  "userId": "awoyeyetimilehin@gmail.com",
+  "userId": "ga@gmail.com",
   "callbackUrl": "https://your_callback_url.com",
   "metadata": {
-    "email": "awoyeyetimilehin@gmail.com",
-    "customerName": "Victor Musa"
+    "email": "ga@gmail.com",
+    "customerName": "Global Accelerex"
   }
 });
 
@@ -60,7 +61,7 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
       
 
     <ParagraphHeading id="redirect-the-customer-back-to-merchant-website">Step 3: Redirect the customer back to merchant website</ParagraphHeading>
-    <Paragraph>When the transaction is completed, we&apos;ll redirect the customer back to you.</Paragraph>
+    <Paragraph>When the transaction is completed, we will redirect the customer back to you.</Paragraph>
 
     <ParagraphHeading id="after-the-payment">Step 4: After the payment</ParagraphHeading>
     <Paragraph>Four things will happen when payment is done (successful):</Paragraph>

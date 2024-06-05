@@ -91,7 +91,7 @@ export default function Authentication() {
 
       <Paragraph>For example, an API call could look like this in Node.js:</Paragraph>
       
-      <CodeBlock>
+      <CodeBlock copy>
         {
           `const response = await got.post("https://pgs-sandbox.globalaccelerex.com/api/pgs/payment/v2/createPayment", {
   headers: {
@@ -106,7 +106,7 @@ export default function Authentication() {
 
       <Paragraph>If you&apos;re using one of our <Link className="underline" href="/docs/sdks-and-plugins/backend-libraries">backend SDKs</Link>, you don&apos;t need to pass the header manually; instead you&apos;ll provide your keys when initialising the library.</Paragraph>
 
-      <CodeBlock>{
+      <CodeBlock copy>{
       `// Install with: npm i RexPay-node-v3
         
 const Flutterwave = require(&apos;RexPay-node-v3&apos;);
