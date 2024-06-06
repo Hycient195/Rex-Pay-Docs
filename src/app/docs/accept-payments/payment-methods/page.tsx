@@ -75,7 +75,7 @@ export default function PaymentMethods() {
       <dl className="pl-2 lg:pl-4">
         <dt className="text-lg text-slate-800 font-semibold">▪ Supported Cards</dt>
         <ul className="pl-2 lg:pl-4 mt-2 flex flex-col gap-2">
-          { cardPaymentDeetails.map((each, index) => <li className={`payment-detail-${index}`}>{each}</li>)}
+          { cardPaymentDeetails.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
         <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto ">
           <Image fill src={sharedImages.payment1} alt="Bank Transfer" className="object-contain" />
@@ -87,7 +87,7 @@ export default function PaymentMethods() {
       <ParagraphHeading className="!mt-10" id="transfer">Bank Transfer</ParagraphHeading>
       <dl className="pl-3 lg:pl-5">
         <ul className=" mt-1 flex flex-col gap-2">
-          { bankTransferDetails.map((each, index) => <li className={`payment-detail-${index}`}>{each}</li>)}
+          { bankTransferDetails.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
         <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
           <Image fill src={sharedImages.payment2} alt="Bank Transfer" className="object-contain" />
@@ -99,7 +99,7 @@ export default function PaymentMethods() {
       <dl className="pl-2 lg:pl-4">
         <dt className="text-lg text-slate-800 font-semibold">▪ Process</dt>
         <ul className="pl-2 lg:pl-4 mt-2 flex flex-col gap-2">
-          { ussdPayments.map((each, index) => <li className={`payment-detail-${index}`}>{each}</li>)}
+          { ussdPayments.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
         <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
           <Image fill src={sharedImages.payment3} alt="Bank Transfer" className="object-contain" />
