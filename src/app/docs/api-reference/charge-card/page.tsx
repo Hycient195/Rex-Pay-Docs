@@ -114,7 +114,7 @@ fetch("{{URL}}/api/cps/v1/chargeCard", requestOptions)
       <CodeBlock copy language={['Json']}>
         {`{
   "reference": "sm23oyr1122",
-  "clientId": "timilehinawoyeyeglobalaccelerexcom",
+  "clientId": "johndoe@gmail.com",
   "paymentUrl": "https://checkout-dev.globalaccelerex.com/pay/16965521OQbS4EfoEX",
   "status": "CREATED",
   "paymentChannel": "DEFAULT",

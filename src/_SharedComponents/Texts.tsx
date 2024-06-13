@@ -10,7 +10,7 @@ export const PageHeading = ({ children, id, className }: IProps) => {
 
 
 export const Paragraph = ({ children, id, className }: IProps) => {
-  return <p id={id} className={`py-3 xl:py-4 text-slate-800 ${className}`}>{children}</p>
+  return <p id={id} className={`py-3 text-sm xl:py-4 text-slate-800 ${className}`}>{children}</p>
 }
 
 

@@ -43,7 +43,7 @@ export default function CodeBlock({ children, language, className, copy }: IProp
               <div className="flex flex-row items-center gap-2">
                 {
                   language.map(each => (
-                    <button key={each} onClick={() => setSelectedLangauge(each)} className={`mb-5 border-b-2 max-w-max px-1 font-semibold pb-1 ${each == selectedLangauge ? "border-b-red-400/90" : "border-b-transparent"}`}>{each}</button>
+                    <button key={each} onClick={() => setSelectedLangauge(each)} className={`mb-5 border-b-2 text-sm max-w-max px-1 font-semibold pb-1 ${each == selectedLangauge ? "border-b-red-400/90" : "border-b-transparent"}`}>{each}</button>
                   ))
                 }
               </div>
@@ -75,7 +75,7 @@ export default function CodeBlock({ children, language, className, copy }: IProp
         )
       }
       <div ref={codeSnippetContainer} className="w-full overflow-x-auto">
-        <pre className="w-max">
+        <pre className="w-max text-sm">
           {children}
         </pre>
       </div>

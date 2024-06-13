@@ -8,9 +8,13 @@ import Image from "next/image";
 const steps = ['Card', 'Transfer', 'USSD'];
 
 const cardPaymentDeetails = [
-  "▪ Customers enter their card details. Card number, expiry date and CVV",
-  "▪ Payment authorization via OTP sent to the card owner's phone number",
-  "▪ Upon successful verification, the payment is completed.",
+  // "▪ Customers enter their card details. Card number, expiry date and CVV",
+  // "▪ Payment authorization via OTP sent to the card owner's phone number",
+  // "▪ Upon successful verification, the payment is completed.",
+  "▪ Visa",
+  "▪ MasterCard",
+  "▪ Verve",
+  "▪ Afrigo",
 ];
 
 const bankTransferDetails = [

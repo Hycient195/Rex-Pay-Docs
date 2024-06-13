@@ -69,9 +69,9 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
     <ListGroup className="gap-3">
       {
         [
-          "We'll redirect to your callback URL after payment is complete.",
-          "We'll send an email receipt to your customer if the payment was successful (if not disabled).",
-          "We'll send you an email notification (if not disabled).",
+          "We will redirect to your callback URL after payment is complete.",
+          "We will send an email receipt to your customer if the payment was successful (if not disabled).",
+          "We will send you an email notification (if not disabled).",
         ].map((each, index: number) => (
           <ListItem index={index} key={`payment-item-${index}`}>{each}</ListItem>
         ))
