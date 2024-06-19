@@ -48,7 +48,7 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
       <br />
       
       <ParagraphHeading id="get-a-payment-link">Step 2: Get a payment link</ParagraphHeading>
-      <Paragraph>We&apos;ll return a link to a payment page. Redirect your customer to this link to make the payment.</Paragraph>
+      <Paragraph>We will return a link to a payment page. Redirect your customer to this link to make the payment.</Paragraph>
 
       <figure className="relative my-4 w-full h-auto aspect-video bg-black/30">
         <Image fill src={sharedImages.checkoutResp} alt="checkout response" />

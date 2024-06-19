@@ -8,20 +8,23 @@ import Image from "next/image";
 const steps = ['Card', 'Transfer', 'USSD'];
 
 const cardPaymentDeetails = [
-  // "▪ Customers enter their card details. Card number, expiry date and CVV",
-  // "▪ Payment authorization via OTP sent to the card owner's phone number",
-  // "▪ Upon successful verification, the payment is completed.",
   "▪ Visa",
   "▪ MasterCard",
   "▪ Verve",
   "▪ Afrigo",
 ];
 
+const paymentProcess = [
+  "▪ Customers enter their card details. Card number, expiry date and CVV",
+  "▪ Payment authorization via OTP sent to the card owner's phone number",
+  "▪ Upon successful verification, the payment is completed.",
+]
+
 const bankTransferDetails = [
   "▪ Customers select their preferred bank.",
   "▪ A bank transfer code and account details are displayed.",
   "▪ Customers complete the transfer using their banking app or online banking.",
-  "▪ he system confirms the transfer and completes the payment.",
+  "▪ The system confirms the transfer and completes the payment.",
 ];
 
 const ussdPayments = [
@@ -84,6 +87,15 @@ export default function PaymentMethods() {
         <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto ">
           <Image fill src={sharedImages.payment1} alt="Bank Transfer" className="object-contain" />
         </figure>
+      </dl>
+
+      <ParagraphHeading id="card">Payment Process</ParagraphHeading>
+      <dl className="pl-2 lg:pl-4">
+        {/* <dt className="text-lg text-slate-800 font-semibold">▪ Supported Cards</dt> */}
+        <ul className="pl-2 lg:pl-2 mt-2 flex flex-col gap-2">
+          { paymentProcess.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
+        </ul>
+        
       </dl>
       {/* <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph> */}
 
