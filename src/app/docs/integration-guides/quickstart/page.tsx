@@ -21,7 +21,7 @@ export default function QuickStart() {
     <main className="">
       <PageHeading>Quickstart</PageHeading>
       <Paragraph>
-        Welcome! With our APIs, you can make and receive payments in dozens of currencies and countries, with a variety of payment channels. Here&apos;s what you need to do:
+        Welcome! With our APIs, you can make and receive payments in dozens of currencies and countries, with a variety of payment channels. Here is what you need to do:
       </Paragraph>
       <ParagraphHeading>Step 1. Create an account</ParagraphHeading>
       <Paragraph>Begin your journey by creating a <a href="https://www.myrexpay.ng/signup" style={{color: '#FF4512'}}>RexPay account</a>. Upon signing up, you will automatically have access to the test environment.</Paragraph>

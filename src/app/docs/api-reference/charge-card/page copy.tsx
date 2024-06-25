@@ -140,7 +140,7 @@ export default function CharegeCard() {
   "data": {
       "id": 288192886,
     "tx_ref": "sample_ref",
-    "flw_ref": "FLW275389391",
+    "flw_ref": "RXP275389391",
     "device_fingerprint": "N/A",
     "amount": 100,
     "charged_amount": 100,
@@ -191,7 +191,7 @@ export default function CharegeCard() {
           <div className="px-[3%] pt-[2%] pb-[3%]">
             <Param text="sideNote" type="string" />
             <div className="grid grid-cols-[2.7fr_1fr] items-center gap-2">
-              <p className="text-slate-800">This could be any message you&apos;d like to associate with this call.</p>
+              <p className="text-slate-800">This could be any message you would like to associate with this call.</p>
             </div>
           </div>
         </div>

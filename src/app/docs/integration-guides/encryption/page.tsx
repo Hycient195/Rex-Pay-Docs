@@ -9,23 +9,23 @@ export default function Encryption() {
       <PageHeading>Encryption</PageHeading>
 
       <InfoBox>
-        This type of encryption only applies if you&apos;re using <Link href="" className="text-red-600/70">direct card charge.</Link>
+        This type of encryption only applies if you are using <Link href="" className="text-red-600/70">direct card charge.</Link>
       </InfoBox>
 
       <Paragraph>
-        When using our <Link href="" className="text-red-600/70">direct card charge API</Link>  to charge a card directly, you&apos;ll need to encrypt the payload containing the card details before making the request.
+        When using our <Link href="" className="text-red-600/70">direct card charge API</Link>  to charge a card directly, you will need to encrypt the payload containing the card details before making the request.
       </Paragraph>
 
       <InfoBox className="!my-4">
-        If you&apos;re using one of our  <Link href="/docs/sdks-and-plugins/backend-libraries" className="text-red-600/70">backend SDKs</Link> , you don&apos;t need to worry about encryption. Pass your encryption key to the library, and it will automatically encrypt the payload before sending.
+        If you are using one of our  <Link href="/docs/sdks-and-plugins/backend-libraries" className="text-red-600/70">backend SDKs</Link> , you do not need to worry about encryption. Pass your encryption key to the library, and it will automatically encrypt the payload before sending.
       </InfoBox>
 
       <Paragraph>
-        To encrypt the payload manually, you&apos;ll need your encryption key (from the Settings {`>`} API 
-        section of your <Link href="" className="text-red-600/70">dashboard</Link> ). You&apos;ll use the  <Link href="" className="text-red-600/70">3DES algorithm</Link> 3DES algorithm to encrypt the payload.
+        To encrypt the payload manually, you will need your encryption key (from the Settings {`>`} API 
+        section of your <Link href="" className="text-red-600/70">dashboard</Link> ). You will use the  <Link href="" className="text-red-600/70">3DES algorithm</Link> 3DES algorithm to encrypt the payload.
       </Paragraph>
 
-      <Paragraph>Here&apos;s an example of an encryption function in different languages. In each case, the function takes the payload as a hash, converts it to JSON, encrypts it and encodes it in base64:</Paragraph>
+      <Paragraph>Here is an example of an encryption function in different languages. In each case, the function takes the payload as a hash, converts it to JSON, encrypts it and encodes it in base64:</Paragraph>
 
       <CodeBlock language={["Node.js"]} copy>
         {`function encrypt(encryptionKey, payload) {

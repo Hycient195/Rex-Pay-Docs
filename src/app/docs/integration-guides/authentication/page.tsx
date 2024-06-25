@@ -34,7 +34,7 @@ export default function Authentication() {
 
       {/* <ParagraphHeading id="api-keys">API Keys</ParagraphHeading>
 
-      <Paragraph>When you create a RexPay account, you&apos;re given three kinds of API keys:</Paragraph>
+      <Paragraph>When you create a RexPay account, you are given three kinds of API keys:</Paragraph>
 
       <ListGroup className="gap-5 mb-5">
         {
@@ -95,7 +95,7 @@ export default function Authentication() {
         {
           `const response = await got.post("https://pgs-sandbox.globalaccelerex.com/api/pgs/payment/v2/createPayment", {
   headers: {
-    Authorization: \`Bearer \${process.env.FLW_SECRET_KEY}\`
+    Authorization: \`Bearer \${process.env.RXP_SECRET_KEY}\`
   },
   json: {
     // Your payload
@@ -104,13 +104,13 @@ export default function Authentication() {
         }
       </CodeBlock>
 
-      <Paragraph>If you&apos;re using one of our <Link className="underline" href="/docs/sdks-and-plugins/backend-libraries">backend SDKs</Link>, you don&apos;t need to pass the header manually; instead you&apos;ll provide your keys when initialising the library.</Paragraph>
+      <Paragraph>If you are using one of our <Link className="underline" href="/docs/sdks-and-plugins/backend-libraries">backend SDKs</Link>, you do not need to pass the header manually; instead you will provide your keys when initialising the library.</Paragraph>
 
       <CodeBlock>{
       `// Install with: npm i RexPay-node-v3
         
-const Flutterwave = require(&apos;RexPay-node-v3&apos;);
-const flw = new RexPay (process.env.FLW_PUBLIC_KEY, process.env.FLW_SECRET_KEY);
+const RexPay = require(&apos;RexPay-node-v3&apos;);
+const rxp = new RexPay (process.env.RXP_PUBLIC_KEY, process.env.RXP_SECRET_KEY);
 // Subsequqent calls will automatically have the header added
 flw.Misc.bvn({bvn: "123456789010"})
   .then(response => console.log(response)

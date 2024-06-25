@@ -4,7 +4,7 @@ export default function HelpfullPage() {
       <p className="text-slate-800">Did you find this page helpful?</p>
       <ul className="flex flex-row items-center gap-3">
         <li className=""><button className="btn-black">Yes, I did</button></li>
-        <li className=""><button className="btn-white">No, I didn&apos;t</button></li>
+        <li className=""><button className="btn-white">No, I did not</button></li>
       </ul>
     </div>
   )

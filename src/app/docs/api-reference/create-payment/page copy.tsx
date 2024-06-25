@@ -160,7 +160,7 @@ condimentum lobortis et. Pellentesque dictum lorem vitae et`}
 
       <WarningBox>
         <h3 className="text-lg font-semibold text-slate-800">Limited support</h3>
-        <p className="text-slate-800">Not all endpoints are supported by our SDKs yet. You&apos;ll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that&apos;s missing in your preferred SDK, please send in a PR.</p>
+        <p className="text-slate-800">Not all endpoints are supported by our SDKs yet. You will see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that is missing in your preferred SDK, please send in a PR.</p>
       </WarningBox>
 
       <ParagraphHeading id="verify-transaction">Verify Transaction</ParagraphHeading>
@@ -174,7 +174,7 @@ condimentum lobortis et. Pellentesque dictum lorem vitae et`}
 
       <WarningBox>
         <h3 className="text-lg font-semibold text-slate-800">Limited support</h3>
-        <p className="text-slate-800">Not all endpoints are supported by our SDKs yet. You&apos;ll see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that&apos;s missing in your preferred SDK, please send in a PR.</p>
+        <p className="text-slate-800">Not all endpoints are supported by our SDKs yet. You will see a list of which endpoints are supported for each SDK in its documentation. If you find an endpoint that is missing in your preferred SDK, please send in a PR.</p>
       </WarningBox>
       
       <ParagraphHeading id="collect-customer-information">Collect customer information</ParagraphHeading>

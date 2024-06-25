@@ -154,11 +154,11 @@ export default function CharegeCard() {
   "message":"Charge initiated",
   "meta":{
   "authorization":{
-    "transfer_reference":"FLW-ee58c31372724f2889b8211a5a477bb1",
+    "transfer_reference":"RXP-ee58c31372724f2889b8211a5a477bb1",
     "transfer_account":"7825397990",
     "transfer_bank":"WEMA BANK",
     "account_expiration":"2020-03-27 09:53:39",
-    "transfer_note":"Please make a bank transfer to FLW Devs",
+    "transfer_note":"Please make a bank transfer to RXP Devs",
     "transfer_amount":10,
     "mode":"banktransfer"
   }
