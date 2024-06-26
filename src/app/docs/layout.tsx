@@ -45,7 +45,7 @@ export default function Layout({ children }: IProps) {
                         {
                           pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation] &&
                           pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation].map(section => (
-                            <li key={section.id} className="text-slate-800"><Link className="py-2 hover:text-red-600/70 duration-300" href={`${pathname}#${section.id}`}>{section.text}</Link></li>
+                            <li key={section.id} className="text-slate-800 "><Link className="py-2 hover:text-red-600/70 duration-300 text-sm" href={`${pathname}#${section.id}`}>{section.text}</Link></li>
                           ))
                         }
                       </ul>
@@ -76,7 +76,7 @@ export default function Layout({ children }: IProps) {
                         </svg>
                         Video tutorials
                       </h4>
-                      <p className="">Visit our YouTube channel for tutorials on integrating the RexPay API.</p>
+                      <p className="">Visit our YouTube channel for tutorials on integrating the RexPay API.</p>
                     </div> */}
                   </div>
                 </div>

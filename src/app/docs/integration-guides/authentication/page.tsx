@@ -16,8 +16,8 @@ export default function Authentication() {
       <ListGroup className="gap-5 mb-5">
         {
          [
-          { title: "Live Mode", text: "The transactions are real, and the effects are real. This should only be used once you have thoroughly tested your integration with this method and are confident that it is working properly." },
-          { title: "Test Mode", text: "The transactions are not real, but the effects are the same. The only cards that can be used are our test cards and bank accounts." },
+          { title: "Live Mode", text: "The transactions are real, and the effects are real. This should only be used once you have thoroughly tested your integration with this method and are confident that it is working properly." },
+          { title: "Test Mode", text: "The transactions are not real, but the effects are the same. The only cards that can be used are our test cards and bank accounts." },
         ].map((item: any, index: number) => (
             <ListItem index={index} key={`video-points=${index}`} className="">
               <div className=""><strong>{item.title}: </strong> {item.text}</div>
@@ -26,7 +26,7 @@ export default function Authentication() {
         }
       </ListGroup>
 
-      <Paragraph className="mt-2">To switch between Live and Test modes, click Developer Tools at the bottom of the menu sidebar as seen below.</Paragraph>
+      <Paragraph className="mt-2">To switch between Live and Test modes, click Developer Tools at the bottom of the menu sidebar as seen below.</Paragraph>
 
       <figure className="relative my-4 w-full max-w-screen-md h-auto aspect-video">
         <Image  src={sharedImages.auth1} alt="Authentication live mode" />
@@ -52,7 +52,7 @@ export default function Authentication() {
 
       <ParagraphHeading id="retrieving-your-api-keys" className="mt-14 bg-eme">Retrieving your API Keys</ParagraphHeading>
 
-      <Paragraph>Your API keys are very vital to making requests successfully to our servers. When you create an account on RexPay, a secret ket is generated for you. To get your keys on test mode:</Paragraph>
+      <Paragraph>Your API keys are very vital to making requests successfully to our servers. When you create an account on RexPay, a secret ket is generated for you. To get your keys on test mode:</Paragraph>
 
       <ListGroup>
         {
@@ -81,21 +81,20 @@ export default function Authentication() {
       <Paragraph>All API calls on RexPay are authenticated. API requests made without authorization will fail with the status code 401: Unauthorized.</Paragraph>
 
       <InfoBox className="!my-5">
-        Your secret key can perform unrestricted actions on your RexPay account. It should remain confidential and be stored only on your servers, preferably as an environment variable. Ensure it is not included in your Git repository or front-end JavaScript code.
+        Your secret key can perform unrestricted actions on your RexPay account. It should remain confidential and be stored only on your servers, preferably as an environment variable. Ensure it is not included in your Git repository or front-end JavaScript code.
       </InfoBox>
 
       <Paragraph>
-        {/* RexPay Uses Basic  Auth. To authorize API calls from your server, pass your email as username and your secret key as password. This means passing an Authorization header with a value of <code>&quot;Bearer: YOUR_SECRET_KEY&quot;</code>. */}
-        RexPay Uses Basic  Auth. To authorize API calls from your server, pass your email as username and your secret key as password. This means passing an Authorization header with a value of <code>&quot;&quot;Basic&quot;, base64_string_of_username_and_password({'{Username:Password}'})&quot;</code>.
+        RexPay Uses Basic  Auth. To authorize API calls from your server, pass your email as username and your secret key as password. This means passing an Authorization header with a value of <code>&quot;&quot;Basic&quot;, base64_string_of_username_and_password({'{Username:Password}'})&quot;</code>.
       </Paragraph>
 
       <Paragraph>For example, an API call could look like this in Node.js:</Paragraph>
       
-      <CodeBlock>
+      <CodeBlock copy>
         {
           `const response = await got.post("https://pgs-sandbox.globalaccelerex.com/api/pgs/payment/v2/createPayment", {
   headers: {
-    Authorization: \`Bearer \${process.env.RXP_SECRET_KEY}\`
+    Authorization: Basic Base64Encode(CLIENT_ID:SECRET_KEY}
   },
   json: {
     // Your payload
@@ -106,7 +105,7 @@ export default function Authentication() {
 
       <Paragraph>If you are using one of our <Link className="underline" href="/docs/sdks-and-plugins/backend-libraries">backend SDKs</Link>, you do not need to pass the header manually; instead you will provide your keys when initialising the library.</Paragraph>
 
-      <CodeBlock>{
+      <CodeBlock copy>{
       `// Install with: npm i RexPay-node-v3
         
 const RexPay = require(&apos;RexPay-node-v3&apos;);

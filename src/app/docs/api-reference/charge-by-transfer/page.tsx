@@ -81,7 +81,7 @@ export default function CharegeByTransfer() {
   "amount": "101.50",
   "transactionReference": "rexpaydoc2",
   "accountNumber": "8767949853",
-  "accountName": "Timilehin Awoyeye",
+  "accountName": "John Doe",
   "bankName": "WEMA",
   "responseCode": "00",
   "responseDescription": "Success"
@@ -96,7 +96,7 @@ export default function CharegeByTransfer() {
   "amount": "101.50",
   "transactionReference": "rexpaydoc2",
   "accountNumber": "8767949853",
-  "accountName": "Timilehin Awoyeye",
+  "accountName": "John Doe",
   "bankName": "WEMA",
   "responseCode": "00",
   "responseDescription": "Success"

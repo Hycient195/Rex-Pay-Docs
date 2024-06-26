@@ -22,11 +22,11 @@ var raw = JSON.stringify({
   "reference": "sm23oyr1122",
   "amount": 2,
   "currency": "NGN",
-  "userId": "awoyeyetimilehin@gmail.com",
+  "userId": "ga@gmail.com",
   "callbackUrl": "https://your_callback_url.com",
   "metadata": {
-    "email": "awoyeyetimilehin@gmail.com",
-    "customerName": "Victor Musa"
+    "email": "ga@gmail.com",
+    "customerName": "Global Accelerex"
   }
 });
 
@@ -46,6 +46,7 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
       
       <ParagraphHeading id="get-a-payment-link">Step 2: Get a payment link</ParagraphHeading>
       <Paragraph>We will return a link to a payment page. Redirect your customer to this link to make the payment.</Paragraph>
+      <Paragraph>We will return a link to a payment page. Redirect your customer to this link to make the payment.</Paragraph>
 
       <figure className="relative my-4 w-full h-auto">
         <Image src={sharedImages.checkoutResp} alt="checkout response" />
@@ -59,6 +60,7 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
 
     <ParagraphHeading id="redirect-the-customer-back-to-merchant-website">Step 3: Redirect the customer back to merchant website</ParagraphHeading>
     <Paragraph>When the transaction is completed, we will redirect the customer back to you.</Paragraph>
+    <Paragraph>When the transaction is completed, we will redirect the customer back to you.</Paragraph>
 
     <ParagraphHeading id="after-the-payment">Step 4: After the payment</ParagraphHeading>
     <Paragraph>Four things will happen when payment is done (successful):</Paragraph>
@@ -66,6 +68,9 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
     <ListGroup className="gap-3">
       {
         [
+          "We will redirect to your callback URL after payment is complete.",
+          "We will send an email receipt to your customer if the payment was successful (if not disabled).",
+          "We will send you an email notification (if not disabled).",
           "We will redirect to your callback URL after payment is complete.",
           "We will send an email receipt to your customer if the payment was successful (if not disabled).",
           "We will send you an email notification (if not disabled).",

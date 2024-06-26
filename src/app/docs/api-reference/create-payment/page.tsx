@@ -81,11 +81,11 @@ var raw = JSON.stringify({
       "reference": "sm23oyr1122",
       "amount": 2,
       "currency": "NGN",
-      "userId": "awoyeyetimilehin@gmail.com",
+      "userId": "ga@gmail.com",
       "callbackUrl": "",
       "metadata": {
-            "email": "awoyeyetimilehin@gmail.com",
-            "customerName": "Victor Musa"
+            "email": "ga@gmail.com",
+            "customerName": "Global Accelerex"
       }
 });
 
@@ -108,7 +108,7 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
       <CodeBlock copy language={['Json']}>
         {`{
   "reference": "sm23oyr1122",
-  "clientId": "timilehinawoyeyeglobalaccelerexcom",
+  "clientId": "dummy@gmail.com",
   "paymentUrl": "https://checkout-dev.globalaccelerex.com/pay/16965521OQbS4EfoEX",
   "status": "CREATED",
   "paymentChannel": "DEFAULT",

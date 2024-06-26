@@ -121,13 +121,12 @@ fetch("{{URL}}/api/pgs/payment/v1/getPaymentDetails/rexpaydocUSSD", requestOptio
   "status": "ONGOING",
   "statusMessage": "Request in progress",
   "providerReference": "23100640302541501589",
-  "provider": "CoralPay",
   "providerInitiated": false,
   "providerResponse": "Request in progress",
   "paymentUrl": "https://checkout.myrexpay.ng/pay/16965549p3a6Dbdm6I",
   "clientName": "gaprodtest",
   "metadata": {
-    "customerName": "Victor Musa",
+    "customerName": "Global Accelerex",
     "email": "ga@gmail.com"
   }
 }`}

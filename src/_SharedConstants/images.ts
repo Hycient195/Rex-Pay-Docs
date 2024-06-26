@@ -15,11 +15,14 @@ import flutter from "@public/images/shared/flutter.png";
 import redirectUserToPayment from "@public/images/shared/user-to-payment-link.png";
 import authCard from "@public/images/shared/auth-card.png";
 import checkoutResp from "@public/images/shared/checkout-resp.png";
+import payment1 from "@public/images/shared/payment-1.png";
+import payment2 from "@public/images/shared/payment-2.png";
+import payment3 from "@public/images/shared/payment-3.png";
 
 const sharedImages = {
   home1, home2, home3, home4, auth1, redirectUserToPayment,
   react, angular, java, cSharp, python, php, android, ios,
-  flutter, authCard, checkoutResp
+  flutter, authCard, checkoutResp, payment1, payment2, payment3
 }
 
 export default sharedImages;
