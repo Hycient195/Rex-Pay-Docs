@@ -140,7 +140,7 @@ export default function CharegeCard() {
   "data": {
       "id": 288192886,
     "tx_ref": "sample_ref",
-    "flw_ref": "RXP275389391",
+    "rxp_ref": "RXP275389391",
     "device_fingerprint": "N/A",
     "amount": 100,
     "charged_amount": 100,

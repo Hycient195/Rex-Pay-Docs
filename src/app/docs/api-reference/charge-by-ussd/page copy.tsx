@@ -71,7 +71,7 @@ export default function CharegeCard() {
   "data": {
     "id": 2382777,
     "tx_ref": "MC-15852309v5050e8y",
-    "flw_ref": "WKOM430901627909006960",
+    "rxp_ref": "WKOM430901627909006960",
     "device_fingerprint": "N/A",
     "amount": 10,
     "charged_amount": 10,

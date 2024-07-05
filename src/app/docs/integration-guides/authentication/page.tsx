@@ -111,7 +111,7 @@ export default function Authentication() {
 const RexPay = require(&apos;RexPay-node-v3&apos;);
 const rxp = new RexPay (process.env.RXP_PUBLIC_KEY, process.env.RXP_SECRET_KEY);
 // Subsequqent calls will automatically have the header added
-flw.Misc.bvn({bvn: "123456789010"})
+rxp.Misc.bvn({bvn: "123456789010"})
   .then(response => console.log(response)
 `}</CodeBlock>
     </main>
