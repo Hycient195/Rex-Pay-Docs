@@ -61,12 +61,10 @@ export default function PaymentMethods() {
   return (
     <main className="">
       <PageHeading id="payment-methods">Payment methods</PageHeading>
-      <Paragraph>
-        <span className="font-semibold">RexPay offers a frictionless payment experience for customers</span>
-        RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you&apos;re willing to accept from your customers.</Paragraph>
+      <Paragraph>RexPay supports a wide variety of methods for your customers to pay you, across a wide range of countries. When accepting payments, you can specify what payment methods you are willing to accept from your customers.</Paragraph>
 
-      {/* <ParagraphHeading id="account-settings">Supported payment methods</ParagraphHeading>
-      <Paragraph>Here&apos;s a list of currently supported payment methods:</Paragraph>
+      <ParagraphHeading id="account-settings">Supported payment methods</ParagraphHeading>
+      <Paragraph>Here is a list of currently supported payment methods:</Paragraph>
 
       <ListGroup>
         {
@@ -76,7 +74,7 @@ export default function PaymentMethods() {
             </ListItem>
           ))
         }
-      </ListGroup> */}
+      </ListGroup>
       
       <ParagraphHeading id="card">Card Payments</ParagraphHeading>
       <dl className="pl-2 lg:pl-4">
@@ -97,8 +95,6 @@ export default function PaymentMethods() {
         </ul>
         
       </dl>
-      {/* <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph> */}
-
       
       <ParagraphHeading className="!mt-10" id="transfer">Bank Transfer</ParagraphHeading>
       <dl className="pl-3 lg:pl-5">
@@ -109,20 +105,21 @@ export default function PaymentMethods() {
           <Image fill src={sharedImages.payment2} alt="Bank Transfer" className="object-contain" />
         </figure>
       </dl>
-      {/* <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph> */}
 
       <ParagraphHeading className="!mt-14" id="ussd">USSD Payments</ParagraphHeading>
-      <dl className="pl-2 lg:pl-4">
-        <dt className="text-lg text-slate-800 font-semibold">▪ Process</dt>
-        <ul className="pl-2 lg:pl-4 mt-2 flex flex-col gap-2">
-          { ussdPayments.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
-        </ul>
+      <ParagraphHeading className="!mt-16" id="ussd">Here is the list of USSD Bank code we currently support:</ParagraphHeading>
+
+      <dl className="mb-20 pl-2 lg:pl-4">
         <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
           <Image fill src={sharedImages.payment3} alt="Bank Transfer" className="object-contain" />
         </figure>
+        {/* <dt className="text-lg text-slate-800 font-semibold">▪ Process</dt> */}
+        <ParagraphHeading id="card">Payment Process</ParagraphHeading>
+        <ul className="pl-2 lg:pl-4 mt-2 flex flex-col gap-2">
+          { ussdPayments.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
+        </ul>
       </dl>
 
-      <ParagraphHeading className="!mt-16" id="ussd">Here is the list of USSD Bank code we currently support:</ParagraphHeading>
       <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
         <thead >
           <tr className="border border-slate-400/60 font-bold">
@@ -144,8 +141,6 @@ export default function PaymentMethods() {
           }
         </tbody>
       </table>
-      {/* <ParagraphHeading id="ussd">USSD</ParagraphHeading> */}
-      {/* <Paragraph>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nisi condimentum lobortis et. Pellentesque dictum lorem vitae et </Paragraph> */}
     </main>
   )
 }

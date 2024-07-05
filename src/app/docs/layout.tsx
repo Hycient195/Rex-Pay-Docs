@@ -76,7 +76,7 @@ export default function Layout({ children }: IProps) {
                         </svg>
                         Video tutorials
                       </h4>
-                      <p className="">Visit our YouTube channel for tutorials on integrating the RexPay API.</p>
+                      <p className="">Visit our YouTube channel for tutorials on integrating the RexPay API.</p>
                     </div> */}
                   </div>
                 </div>

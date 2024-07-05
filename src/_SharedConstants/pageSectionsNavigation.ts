@@ -13,7 +13,6 @@ export const pageSectionNavigation = {
     { text: "Authorizing API calls", id: "authorizing-api-calls" },
   ],
   "payment-methods": [
-    { text: "Supported payment methods", id: "supported-payment-methods" },
     { text: "Card", id: "card" },
     { text: "Transfer", id: "transfer" },
     { text: "USSD", id: "ussd" },
