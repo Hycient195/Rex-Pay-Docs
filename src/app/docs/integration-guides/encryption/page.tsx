@@ -22,7 +22,7 @@ export default function Encryption() {
 
       <Paragraph>
         To encrypt the payload manually, you will need your encryption key (from the Settings {`>`} API 
-        section of your <Link href="" className="text-red-600/70">dashboard</Link> ). You will use the  <Link href="" className="text-red-600/70">3DES algorithm</Link> 3DES algorithm to encrypt the payload.
+        section of your <Link href="" className="text-red-600/70">dashboard</Link> ). You will use the  <Link href="" className="text-red-600/70">3DES algorithm</Link> to encrypt the payload.
       </Paragraph>
 
       <Paragraph>Here is an example of an encryption function in different languages. In each case, the function takes the payload as a hash, converts it to JSON, encrypts it and encodes it in base64:</Paragraph>

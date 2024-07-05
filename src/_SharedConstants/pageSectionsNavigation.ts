@@ -1,4 +1,10 @@
 export const pageSectionNavigation = {
+  // quickstart: [
+  //   { text: "Create an account", id: "create-an-account" },
+  //   { text: "Configure your integration", id: "configure-your-integration" },
+  //   { text: "Complete your KYC", id: "complete-your-kyc" },
+  //   { text: "Accept payment from your customers", id: "accept-payment-from-your-customers" }
+  // ],
   quickstart: [
     { text: "Create an account", id: "create-an-account" },
     { text: "Configure your integration", id: "configure-your-integration" },

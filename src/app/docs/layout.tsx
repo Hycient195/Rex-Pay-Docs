@@ -66,7 +66,7 @@ export default function Layout({ children }: IProps) {
                         </svg>
                         Have any questions?
                       </h4>
-                      <p className="">Feel free to reach out if you have any questions or need assistance with integrating the RexPay API.</p>
+                      <p className="">Feel free to reach out to <a href="mailto:productplatform.support@globalaccelerex.com" style={{color: '#FF4512'}}>productplatform.support@globalaccelerex.com</a> if you have any questions or need assistance with integrating the RexPay API.</p>
                     </div>
                     <div className="w-px h-full px-[5%] bg-zinc-200 " />
                     {/* <div className="">
