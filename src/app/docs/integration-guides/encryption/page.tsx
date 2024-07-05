@@ -9,11 +9,11 @@ export default function Encryption() {
       <PageHeading>Encryption</PageHeading>
 
       <InfoBox>
-        This type of encryption only applies if you&apos;re using <Link href="" className="text-red-600/70">direct card charge.</Link>
+        This type of encryption only applies if you&apos;re using <Link href="/docs/api-reference/charge-card" className="text-red-600/70">direct card charge.</Link>
       </InfoBox>
 
       <Paragraph>
-        When using our <Link href="" className="text-red-600/70">direct card charge API</Link>  to charge a card directly, you&apos;ll need to encrypt the payload containing the card details before making the request.
+        When using our <Link href="/docs/api-reference/charge-card" className="text-red-600/70">direct card charge API</Link>  to charge a card directly, you&apos;ll need to encrypt the payload containing the card details before making the request.
       </Paragraph>
 
       <InfoBox className="!my-4">
