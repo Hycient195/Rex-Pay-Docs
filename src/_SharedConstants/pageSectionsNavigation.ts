@@ -1,7 +1,7 @@
 export const pageSectionNavigation = {
   docs: [
-    { text: "Transfers", id: "", href: "/docs/accept-payments/payment-methods" },
-    { text: "Accept Payments", id: "", href: "" },
+    { text: "Transfers", id: "", href: "" },
+    { text: "Accept Payments", id: "", href: "docs/accept-payments/payment-methods" },
     { text: "SDKs and Plugins", id: "", href: "/docs/sdks-and-plugins/frontend-frameworks" },
     { text: "Recurring Payments", id: "", href: "" },
   ],
