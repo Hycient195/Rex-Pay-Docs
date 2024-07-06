@@ -82,9 +82,6 @@ export default function PaymentMethods() {
         <ul className="pl-2 lg:pl-4 mt-2 flex flex-col gap-2">
           { cardPaymentDeetails.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
-        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto ">
-          <Image fill src={sharedImages.payment1} alt="Bank Transfer" className="object-contain" />
-        </figure>
       </dl>
 
       <ParagraphHeading id="card">Payment Process</ParagraphHeading>
@@ -93,33 +90,43 @@ export default function PaymentMethods() {
         <ul className="pl-2 lg:pl-2 mt-2 flex flex-col gap-2">
           { paymentProcess.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
+        <br />
         
+        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto ">
+          <Image fill src={sharedImages.payment1} alt="Bank Transfer" className="object-contain" />
+        </figure>
       </dl>
       
       <ParagraphHeading className="!mt-10" id="transfer">Bank Transfer</ParagraphHeading>
+      
+      <ParagraphHeading id="card">Payment Process</ParagraphHeading>
       <dl className="pl-3 lg:pl-5">
         <ul className=" mt-1 flex flex-col gap-2">
           { bankTransferDetails.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
+        <br />
+
         <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
           <Image fill src={sharedImages.payment2} alt="Bank Transfer" className="object-contain" />
         </figure>
       </dl>
 
       <ParagraphHeading className="!mt-14" id="ussd">USSD Payments</ParagraphHeading>
-      <ParagraphHeading className="!mt-16" id="ussd">Here is the list of USSD Bank code we currently support:</ParagraphHeading>
-
       <dl className="mb-20 pl-2 lg:pl-4">
-        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
-          <Image fill src={sharedImages.payment3} alt="Bank Transfer" className="object-contain" />
-        </figure>
-        {/* <dt className="text-lg text-slate-800 font-semibold">▪ Process</dt> */}
         <ParagraphHeading id="card">Payment Process</ParagraphHeading>
         <ul className="pl-2 lg:pl-4 mt-2 flex flex-col gap-2">
           { ussdPayments.map((each, index) => <li key={`payment-detail-${index}`}>{each}</li>)}
         </ul>
+        <br />
+
+        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
+          <Image fill src={sharedImages.payment3} alt="Bank Transfer" className="object-contain" />
+        </figure>
       </dl>
 
+
+      <ParagraphHeading className="!mt-16" id="ussd">Here is the list of USSD Bank code we currently support:</ParagraphHeading>
+      
       <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
         <thead >
           <tr className="border border-slate-400/60 font-bold">

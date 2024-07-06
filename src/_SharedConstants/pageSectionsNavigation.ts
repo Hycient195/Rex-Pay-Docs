@@ -1,10 +1,19 @@
 export const pageSectionNavigation = {
+<<<<<<< HEAD
   docs: [
     { text: "Transfers", id: "", href: "/docs/accept-payments/payment-methods" },
     { text: "Accept Payments", id: "", href: "" },
     { text: "SDKs and Plugins", id: "", href: "/docs/sdks-and-plugins/frontend-frameworks" },
     { text: "Recurring Payments", id: "", href: "" },
   ],
+=======
+  // quickstart: [
+  //   { text: "Create an account", id: "create-an-account" },
+  //   { text: "Configure your integration", id: "configure-your-integration" },
+  //   { text: "Complete your KYC", id: "complete-your-kyc" },
+  //   { text: "Accept payment from your customers", id: "accept-payment-from-your-customers" }
+  // ],
+>>>>>>> d652370e7d2f2ddf8df011a60ccacb8a79cdfdad
   quickstart: [
     { text: "Create an account", id: "create-an-account" },
     { text: "Configure your integration", id: "configure-your-integration" },

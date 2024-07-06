@@ -42,12 +42,13 @@ const DashboardNav = memo(() => {
         </svg>
       </button>
 
-      <div className="items-center max-md:hidden gap-x-1.5 flex flex-row gap-2 border lg:w-[60%] border-zinc-2/7000 rounded-full p-2.5 px-3 text-zinc-500">
+      {/* <div className="items-center max-md:hidden gap-x-1.5 flex flex-row gap-2 border lg:w-[60%] border-zinc-2/7000 rounded-full p-2.5 px-3 text-zinc-500">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
           <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
         </svg>
         <input type="text" className="focus:outline-none text-left" placeholder="Search Documentation" />
-      </div>
+      </div> */}
+      &nbsp;
 
 
       <ul className="flex flex-row gap-2 items-center">
