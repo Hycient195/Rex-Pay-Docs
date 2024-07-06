@@ -1,4 +1,10 @@
 export const pageSectionNavigation = {
+  docs: [
+    { text: "Transfers", id: "", href: "/docs/accept-payments/payment-methods" },
+    { text: "Accept Payments", id: "", href: "" },
+    { text: "SDKs and Plugins", id: "", href: "/docs/sdks-and-plugins/frontend-frameworks" },
+    { text: "Recurring Payments", id: "", href: "" },
+  ],
   quickstart: [
     { text: "Create an account", id: "create-an-account" },
     { text: "Configure your integration", id: "configure-your-integration" },

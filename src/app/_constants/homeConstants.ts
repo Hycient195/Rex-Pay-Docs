@@ -6,7 +6,7 @@ export const homeConstants = [
     title: "Transfers",
     subtitle: "Move money from your wallet to bank accounts or other wallets.",
     image: sharedImages.home3,
-    href: "/"
+    href: ""
   },
   {
     title: "Accept Payments",
@@ -24,6 +24,6 @@ export const homeConstants = [
     title: "Recurring payments",
     subtitle: "Tokenize cards for recurring payments.",
     image: sharedImages.home4,
-    href: "/"
+    href: ""
   },
 ]

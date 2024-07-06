@@ -31,8 +31,8 @@ export default function Layout({ children }: IProps) {
           <main className="w-full relative overflow-scroll bg-white h-screen max-h-[100vh] min-h-max grid grid-rows-[max-content_1fr]">
             <DashboardNav />
             
-            <div className="h-full  relative grid grid-rows-[1fr_max-content]">
-              <div className="w-full relative h-full grid gap-3 xl:gap-4 grid-cols-[2.5fr_1fr] max-md:grid-cols-1 p-4 lg:p-6">
+            <div className={`h-full  relative grid grid-rows-[1fr_max-content] `}>
+              <div className={`w-full relative h-full grid gap-3 xl:gap-4 max-md:grid-cols-1 p-4 lg:p-6 ${pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation] ? "grid-cols-[2.5fr_1fr]" : " grid-cols-[1fr]"}`}>
                 <div className="!gri min-w-[300px]">
                   {children}
                 </div>
@@ -45,7 +45,8 @@ export default function Layout({ children }: IProps) {
                         {
                           pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation] &&
                           pageSectionNavigation[lastPath as keyof typeof pageSectionNavigation].map(section => (
-                            <li key={section.id} className="text-slate-800 "><Link className="py-2 hover:text-red-600/70 duration-300 text-sm" href={`${pathname}#${section.id}`}>{section.text}</Link></li>
+                            // @ts-ignore
+                            <li key={section.id} className="text-slate-800 "><Link className="py-2 hover:text-red-600/70 duration-300 text-sm" href={`${section?.href ? section?.href : ` ${pathname}#${section.id}`}`}>{section.text}</Link></li>
                           ))
                         }
                       </ul>
