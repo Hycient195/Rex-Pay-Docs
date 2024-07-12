@@ -24,7 +24,7 @@ export default function FrontendFrameworks() {
       <div className="grid grid-cols-2 mt-5 gap-4  gap-y-10 max-w-screen-md">
         {
           frameworks.map(each => (
-            <a key={each.text} href={each.url}>
+            <a key={each.text} href={each.url} target="_blank">
               <div className="grid grid-cols-[70px_1fr] items-center gap-3 lg:gap-4">
                 <figure className="relative w-full rounded-lg h-auto aspect-square">
                   <Image fill src={each.image} alt={each.text} />
