@@ -70,10 +70,42 @@ export default function CharegeByTransfer() {
   "reference": "rexpaydoc2",
   "amount": "100",
   "customerId": "yourcustomermail@gmail.com"
-
 }`}
       </CodeBlock>
       <Line />
+
+      <ParagraphHeading>Request Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "amount", "Number", "Transaction Amount", "true"],
+              [ "transactionReference", "String", "Transaction reference id", "true"],              
+              [ "accountNumber", "Number", "Transaction account number", "true"],              
+              [ "accountName", "String", "Name of recipient", "true"],              
+              [ "bankName", "String", "Name of recipient's bank", "true"],              
+              [ "responseCode", "Number", "Status code of request", "true"],              
+              [ "responseDescription", "Number", "Status description of request", "true"],              
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
 
       <ParagraphHeading>Example Request</ParagraphHeading>
       <CodeBlock copy language={['JavaScript']}>
@@ -89,7 +121,39 @@ export default function CharegeByTransfer() {
       </CodeBlock>
       <Line />
       
-
+      <ParagraphHeading>Request Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "amount", "Number", "Transaction Amount", "true"],
+              [ "transactionReference", "String", "Transaction reference id", "true"],              
+              [ "accountNumber", "Number", "Transaction account number", "true"],              
+              [ "accountName", "String", "Name of recipient", "true"],              
+              [ "bankName", "String", "Name of recipient's bank", "true"],              
+              [ "responseCode", "Number", "Status code of request", "true"],              
+              [ "responseDescription", "Number", "Status description of request", "true"],              
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      
       <ParagraphHeading>Example Response</ParagraphHeading>
       <CodeBlock copy language={['Json']}>
         {`{

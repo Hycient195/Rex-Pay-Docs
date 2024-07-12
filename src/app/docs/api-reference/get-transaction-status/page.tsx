@@ -49,6 +49,31 @@ export default function CharegeCard() {
       </CodeBlock>
       <Line />
 
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "transactionReference", "String", "Unique transaction reference ID", "true"],
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
       <ParagraphHeading>Example Request</ParagraphHeading>
       <CodeBlock copy language={['JavaScript']}>
         {`var raw = "{\r\n  \"transactionReference\": \"sm23oyr1122\"\r\n}";
@@ -66,6 +91,38 @@ fetch("{{URL}}/api/cps/v1/getTransactionStatus", requestOptions)
       </CodeBlock>
       <Line />
       
+       <ParagraphHeading>Response Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "amount", "Number", "Transaction Amount", "true"],
+              [ "paymentReference", "String", "Payment reference id", "true"],              
+              [ "transactionDate", "String", "Transaction date", "true"],              
+              [ "fees", "Number", "Transaction charge fee", "true"],             
+              [ "currency", "String", "Transaction currency", "true"],                   
+              [ "responseCode", "Number", "Status code of request", "true"],              
+              [ "responseDescription", "Number", "Status description of request", "true"],              
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
 
       <ParagraphHeading>Example Response</ParagraphHeading>
       <CodeBlock copy language={['Json']}>

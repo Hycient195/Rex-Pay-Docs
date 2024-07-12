@@ -145,6 +145,34 @@ export default function AuthorizeCard() {
       </CodeBlock>
       <Line />
 
+      <ParagraphHeading>Request Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "encryptedRequest", "String", "Unique client identification number", "true"],
+              [ "Version", "Number", "Version for", "true"],              
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+
       <ParagraphHeading>Example Request</ParagraphHeading>
       <CodeBlock copy language={['JavaScript']}>
         {`var myHeaders = new Headers();
@@ -165,6 +193,34 @@ fetch("{{URL}}/api/cps/v1/authorizeTransaction", requestOptions)
       </CodeBlock>
       <Line />
       
+
+      <ParagraphHeading>Response Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "encryptedRequest", "String", "Unique client identification number", "true"],
+              [ "Version", "Number", "Version for", "true"],              
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
 
       <ParagraphHeading>Example Response</ParagraphHeading>
       <CodeBlock copy language={['Json']}>

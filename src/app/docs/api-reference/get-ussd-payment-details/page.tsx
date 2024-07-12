@@ -107,6 +107,48 @@ fetch("{{URL}}/api/pgs/payment/v1/getPaymentDetails/rexpaydocUSSD", requestOptio
       </CodeBlock>
       <Line />
 
+      <ParagraphHeading>Response Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "referenceID", "String", "Reference Id", "true"],
+              [ "clientId", "String", "Client Identification number", "true"],
+              [ "userId", "String", "User Identification number", "true"],   
+              [ "amount", "Number", "Transaction amount", "true"],   
+              [ "fees", "Number", "Transaction charge fee", "true"],
+              [ "currency", "String", "Transaction currency", "true"],
+              [ "createdAt", "String", "Time of transaction creation", "true"],
+              [ "channel", "String", "Channel of payment", "true"],
+              [ "status", "String", "Transaction status", "true"],
+              [ "statusMessage", "String", "Transaction status message", "true"],
+              [ "providerReference", "String", "Reference ID of transaction provider", "true"],
+              [ "providerInitiated", "Boolean", "Indicates if provider is initiated", "true"],
+              [ "providerResponse", "String", "Response", "true"],
+              [ "paymentUrl", "String", "URL for payment", "true"], 
+              [ "clientName", "String", "Name of client", "true"],
+              [ "metadata", "Object", "Transaction metadata", "true"],          
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+
       <ParagraphHeading>Example Response</ParagraphHeading>
       <CodeBlock copy language={['Json']}>
         {`{

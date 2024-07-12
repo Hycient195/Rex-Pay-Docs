@@ -75,6 +75,38 @@ export default function CharegeByUssd() {
       </CodeBlock>
       <Line />
 
+      <ParagraphHeading>Request Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "reference", "String", "Reference Id", "true"],
+              [ "userId", "String", "User Identification number", "true"],             
+              [ "amount", "Number", "Transaction amount", "true"],             
+              [ "currency", "String", "Transaction currency", "true"],
+              [ "callbackUrl", "String", "URL returned after payment", "true"],             
+              [ "paymentChannel", "String", "Medium of payment", "true"],           
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+
       <ParagraphHeading>Example Request</ParagraphHeading>
       <CodeBlock copy language={['JavaScript']}>
         {`var myHeaders = new Headers();
@@ -103,6 +135,42 @@ fetch("{{URL}}/api/pgs/payment/v1/makePayment", requestOptions)
       </CodeBlock>
       <Line />
       
+      <ParagraphHeading>Response Parameters</ParagraphHeading>
+      <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
+        <thead >
+          <tr className="border border-slate-400/60 font-bold">
+            <td>Name</td>
+            <td>Type</td>
+            <td>Description</td>
+            <td>Optional Mandatory</td>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            [
+              [ "reference", "String", "Reference Id", "true"],
+              [ "clientId", "String", "Client Identification number", "true"],             
+              [ "paymentUrl", "String", "URL for payment", "true"],             
+              [ "status", "String", "Transaction status", "true"],             
+              [ "paymentChannel", "String", "Channel of payment", "true"],             
+              [ "providerResponse", "String", "Response", "true"],             
+              [ "paymentUrlReference", "String", "Unique URL for payment", "true"],             
+              [ "providerExtraInfo", "String", "Provider extra response", "true"],             
+              [ "externalPaymentReference", "Number", "Unique external payment reference number", "true"],             
+              [ "fees", "Number", "Transaction charge fee", "true"],             
+              [ "currency", "String", "Transaction currency", "true"],             
+            ].map((row, rowIndex: number) => (
+              <tr key={`payment-row-${rowIndex}`} className="border border-slate-300/60">
+                {
+                  row.map((col, colIndex: number) => (
+                    <td key={`payment-column-${colIndex}`} className=" break-all">{col}</td>
+                  ))
+                }
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
 
       <ParagraphHeading>Example Response</ParagraphHeading>
       <CodeBlock copy language={['Json']}>
