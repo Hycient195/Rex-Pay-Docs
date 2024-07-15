@@ -121,7 +121,7 @@ export default function CharegeByTransfer() {
       </CodeBlock>
       <Line />
       
-      <ParagraphHeading>Request Parameters</ParagraphHeading>
+      <ParagraphHeading>Response Parameters</ParagraphHeading>
       <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
         <thead >
           <tr className="border border-slate-400/60 font-bold">

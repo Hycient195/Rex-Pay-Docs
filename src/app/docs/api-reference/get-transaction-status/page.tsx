@@ -49,6 +49,7 @@ export default function CharegeCard() {
       </CodeBlock>
       <Line />
 
+      <ParagraphHeading>Request Parameters</ParagraphHeading>
       <table cellPadding={20} cellSpacing={2} className="border border-slate-200 w-full ">
         <thead >
           <tr className="border border-slate-400/60 font-bold">

@@ -58,7 +58,7 @@ const DashboardNav = memo(() => {
           </a>
         </li>
 
-        <li className="bg-zinc-100 shadow-sm p-1 rounded-full flex flex-row items-center gap-2">
+        <li className="bg-zinc-100 p-1 rounded-full flex flex-row items-center gap-2">
           <a href="https://www.myrexpay.ng/signup" target="_blank" rel="no-referrer" className="text-white font-semibold bg-black hover:bg-black/80 px-5 py-2.5 duration-300 rounded-md">
             Sign up
           </a>
