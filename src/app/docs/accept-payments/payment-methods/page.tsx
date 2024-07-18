@@ -92,7 +92,7 @@ export default function PaymentMethods() {
         </ul>
         <br />
         
-        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto ">
+        <figure className="relative my-4 w-full max-w-screen-md h-auto aspect-video">
           <Image fill src={sharedImages.payment1} alt="Bank Transfer" className="object-contain" />
         </figure>
       </dl>
@@ -106,7 +106,7 @@ export default function PaymentMethods() {
         </ul>
         <br />
 
-        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
+        <figure className="relative my-4 w-full max-w-screen-md h-auto aspect-video">
           <Image fill src={sharedImages.payment2} alt="Bank Transfer" className="object-contain" />
         </figure>
       </dl>
@@ -119,7 +119,7 @@ export default function PaymentMethods() {
         </ul>
         <br />
 
-        <figure className="aspect-[9/10] relative mt-4 w-full max-w-lg h-auto">
+        <figure className="relative my-4 w-full max-w-screen-md h-auto aspect-video">
           <Image fill src={sharedImages.payment3} alt="Bank Transfer" className="object-contain" />
         </figure>
       </dl>
