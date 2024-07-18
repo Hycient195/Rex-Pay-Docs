@@ -15,13 +15,16 @@ export default function Home() {
                 <Image fill src={each.image} alt={each.title} />
               </figure>
               <div className="mt-4">
-                <h3 className="text-red-500/80 font-bold text-lg">{each.title}</h3>
-                <p className="text-slate-800">
-                  {each.subtitle} {
+                <h3 className="text-red-500/80 font-bold text-lg">
+                  {each.title} {
                     ['transfers', 'recurring payments'].includes(each.title.toLowerCase())
                       ? <small className="font-light text-red-500/80">(coming soon)</small>
                       : false
                   }
+                </h3>
+
+                <p className="text-slate-800">
+                  {each.subtitle}
                 </p>
               </div>
             </Link>
