@@ -18,6 +18,11 @@ const frameworks = [
     image: sharedImages.flutter,
     text: "Flutter",
     url: 'https://github.com/accelerex-developer/RexPayFlutter/tree/master'
+  }, 
+  {
+    image: sharedImages.react,
+    text: "React native",
+    url: 'https://github.com/accelerex-developer/RexPayReactNative'
   }
 ]
 
