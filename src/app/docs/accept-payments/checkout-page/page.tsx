@@ -61,7 +61,7 @@ fetch("{{URL}}/api/pgs/payment/v2/createPayment", requestOptions)
     <Paragraph>When the transaction is completed, we will redirect the customer back to you.</Paragraph>
 
     <ParagraphHeading id="after-the-payment">Step 4: After the payment</ParagraphHeading>
-    <Paragraph>Four things will happen when payment is done (successful):</Paragraph>
+    <Paragraph>Three things will happen when payment is done (successful):</Paragraph>
 
     <ListGroup className="gap-3">
       {
